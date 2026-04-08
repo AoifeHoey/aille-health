@@ -1,55 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .container {
-            text-align: center;
-            color: white;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        button {
-            padding: 12px 30px;
-            font-size: 1em;
-            background-color: white;
-            color: #667eea;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Áille Health Clinic</title>
+  <meta name="description" content="Áille Health Clinic is the Irish distributor of Traditional Chinese Medicine granules, acupuncture supplies, and clinical products, continuing supply for practitioners across Ireland."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <div class="container">
-        <h1>Welcome</h1>
-        <p>Your amazing landing page starts here</p>
-        <button>Get Started</button>
+    <main class="page-shell">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Launching 27 April 2026 • Ireland</p>
+
+          <h1>Áille Health Clinic</h1>
+
+          <p class="tagline">
+            We are pleased to continue supplying practitioners across Ireland.
+          </p>
+
+          <p class="hero-description">
+          Irish distributor of Traditional Chinese Medicine granules, acupuncture supplies, and clinical products.
+          </p>
+
+          <div class="hero-actions">
+            <div class="launch-pill">Launching 27th April 2026</div>
+            <a href="#" class="btn" id="openForm">Order Here</a>
+          </div>
+
+          <p class="hero-note">
+          Orders are currently processed via our enquiry form while our online ordering system is in development.
+          </p>
+
+        </div>
+
+        <div class="hero-visual">
+        <div class="logo-feature">
+          <img src="logo.png" alt="Áille Health Clinic logo" />
+        </div>
+      </div>
+      </section>
+
+      <section class="category-section" aria-labelledby="category-heading">
+      <div class="category-intro">
+
+        <p class="section-kicker">Browse our range</p>
+        <h2 id="category-heading">Shop by Category</h2>
+        <p class="category-note">
+          Online account ordering is coming soon. In the meantime, orders can be placed directly through our enquiry form.
+        </p>
+        <p class="qualification-note">
+        Proof of qualification is required for TCM herbs and acupuncture supplies.
+        </p>
+      </div>
+
+      <div class="category-grid">
+        <button class="category-card" type="button" aria-label="Acupuncture supplies coming soon">
+          <img src="acupuncture.jpg" alt="Acupuncture supplies" />
+          <span class="category-overlay"></span>
+          <span class="category-label">Acupuncture Supplies</span>
+        </button>
+
+        <button class="category-card" type="button" aria-label="TCM Granules coming soon">
+          <img src="granules.jpg" alt="TCM granules" />
+          <span class="category-overlay"></span>
+          <span class="category-label">TCM Granules</span>
+        </button>
+
+        <button class="category-card" type="button" aria-label="Aura Supplements coming soon">
+          <img src="aura.jpg" alt="Aura supplements" />
+          <span class="category-overlay"></span>
+          <span class="category-label">Aura Supplements</span>
+        </button>
+
+        <button class="category-card" type="button" aria-label="Mycology Nutrition coming soon">
+          <img src="mycology.jpg" alt="Mycology nutrition" />
+          <span class="category-overlay"></span>
+          <span class="category-label">Mycology Nutrition</span>
+        </button>
+      </div>
+    </section>
+
+      <section class="info-panel" id="contact">
+      <div class="panel-inner">
+        <div class="panel-left">
+          <p class="panel-label">ÁILLE HEALTH</p>
+          <p>
+            Supplying trusted Traditional Chinese Medicine, acupuncture, and physiotherapy products to qualified practitioners across Ireland.
+          </p>
+        </div>
+
+        <div class="panel-right">
+          <h2>Order Enquiries</h2>
+          <p><strong>Email</strong> <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a></p>
+          <p><strong>Phone</strong> <a href="tel:+353XXXXXXXXX">+353 XX XXX XXXX</a></p>
+          <p><strong>Location</strong> Wexford | Ireland</p>
+          <p>Please include qualification documentation where applicable.</p>   
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>© 2026 Áille Health</p>
+    </footer>
+  </main>
+
+  <div class="form-overlay" id="formOverlay" aria-hidden="true">
+    <div class="form-modal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+      <button class="close-btn" id="closeForm" aria-label="Close form">&times;</button>
+
+      <h2 id="formTitle">Order Enquiry</h2>
+      <p class="form-note">
+        Orders are currently processed manually. Please provide as much detail as possible below.
+      </p>
+      <p class="form-note">
+        Proof of qualification is required before orders for TCM herbs and acupuncture supplies can be processed. Please attach a PDF or image of your relevant qualification.
+      </p>
+
+      <form
+        name="order-form"
+        method="POST"
+        netlify
+        data-netlify="true"
+        action="/thank-you/"
+        enctype="multipart/form-data"
+      >
+        <input type="hidden" name="form-name" value="order-form" />
+
+        <input type="text" name="full-name" placeholder="Full Name" required />
+        <input type="text" name="clinic-name" placeholder="Clinic / Practice Name" />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+
+        <select name="product-category" required>
+          <option value="">Select Product Category</option>
+          <option value="Acupuncture Supplies">Acupuncture Supplies</option>
+          <option value="TCM Granules">TCM Granules</option>
+          <option value="Aura Supplements">Aura Supplements</option>
+          <option value="Mycology Nutrition">Mycology Nutrition</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <textarea
+          name="order-details"
+          rows="5"
+          placeholder="Order / Enquiry Details"
+          required
+        ></textarea>
+
+        <label class="upload-label">
+          Upload Qualification Document
+          <input type="file" name="qualification-upload" accept=".pdf,image/*" />
+        </label>
+
+        <label class="consent">
+          <input type="checkbox" name="qualified-confirmation" required />
+          I confirm that I am a qualified practitioner where required and that the information provided is accurate.
+        </label>
+
+        <button type="submit" class="btn">Submit Enquiry</button>
+      </form>
     </div>
+  </div>
+
+
+  <script>
+    const openBtn = document.getElementById("openForm");
+    const closeBtn = document.getElementById("closeForm");
+    const overlay = document.getElementById("formOverlay");
+    const categoryCards = document.querySelectorAll(".category-card");
+
+    openBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      overlay.classList.add("active");
+      overlay.setAttribute("aria-hidden", "false");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      overlay.classList.remove("active");
+      overlay.setAttribute("aria-hidden", "true");
+    });
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove("active");
+        overlay.setAttribute("aria-hidden", "true");
+      }
+    });
+
+    categoryCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        overlay.classList.add("active");
+        overlay.setAttribute("aria-hidden", "false");
+      });
+    });
+  </script>
 </body>
 </html>
