@@ -413,6 +413,16 @@ body {
   box-shadow: var(--shadow);
 }
 
+select {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff; /* main text */
+}
+
+select option {
+    color: #1f2f2a;
+    background-color: #e8efe9; /* soft sage */
+}
+
 .close-btn {
   position: absolute;
   top: 10px;
