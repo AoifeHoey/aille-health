@@ -54,7 +54,7 @@
           Online account ordering is coming soon. In the meantime, orders can be placed directly through our enquiry form.
         </p>
         <p class="qualification-note">
-        Proof of qualification is required for TCM herbs and acupuncture supplies.
+          Proof of qualification is required for TCM herbs and acupuncture supplies.
         </p>
       </div>
 
@@ -88,7 +88,7 @@
       <section class="info-panel" id="contact">
       <div class="panel-inner">
         <div class="panel-left">
-          <p class="panel-label">ÁILLE HEALTH</p>
+          <p class="panel-label">ÁILLE HEALTH CLINIC</p>
           <p>
             Supplying trusted Traditional Chinese Medicine, acupuncture, and physiotherapy products to qualified practitioners across Ireland.
           </p>
@@ -97,7 +97,7 @@
         <div class="panel-right">
           <h2>Order Enquiries</h2>
           <p><strong>Email</strong> <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a></p>
-          <p><strong>Phone</strong> <a href="tel:+353XXXXXXXXX">+353 XX XXX XXXX</a></p>
+          <p><strong>Phone</strong> <a href="tel:+353857486575">+353 85 748 6575</a></p>
           <p><strong>Location</strong> Wexford | Ireland</p>
           <p>Please include qualification documentation where applicable.</p>   
         </div>
@@ -124,17 +124,16 @@
       <form
         name="order-form"
         method="POST"
-        netlify
         data-netlify="true"
-        action="/thank-you/"
         enctype="multipart/form-data"
+        action="/thank-you/"
       >
         <input type="hidden" name="form-name" value="order-form" />
 
         <input type="text" name="full-name" placeholder="Full Name" required />
-        <input type="text" name="clinic-name" placeholder="Clinic / Practice Name" />
+        <input type="text" name="clinic-name" placeholder="Clinic / Practice Name" required/>
         <input type="email" name="email" placeholder="Email Address" required />
-        <input type="tel" name="phone" placeholder="Phone Number" />
+        <input type="tel" name="phone" placeholder="Phone Number" required/>
 
         <select name="product-category" required>
           <option value="">Select Product Category</option>
