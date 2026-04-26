@@ -13,9 +13,30 @@
 
 <body>
     <main class="page-shell">
-      <section class="hero">
+      <header class="navbar">
+        <div class="nav-container">
+
+          <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="nav-right">
+            <a href="#" class="shop-link" id="openForm">Shop</a>
+
+            <button class="hamburger" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+
+        </div>
+      </header>
+      <section class="hero" id="home">
         <div class="hero-copy">
-          <p class="eyebrow">Launching 27 April 2026 • Ireland</p>
+          <p class="eyebrow">Launching 4th May 2026 • Ireland</p>
 
           <h1>Áille Health Clinic</h1>
 
@@ -28,8 +49,7 @@
           </p>
 
           <div class="hero-actions">
-            <div class="launch-pill">Launching 27th April 2026</div>
-            <a href="#" class="btn" id="openForm">Order Here</a>
+            <div class="launch-pill">Launching 4th May 2026</div>
           </div>
 
           <p class="hero-note">
@@ -45,7 +65,7 @@
       </div>
       </section>
 
-      <section class="category-section" aria-labelledby="category-heading">
+      <section class="category-section" id="products" aria-labelledby="category-heading">
       <div class="category-intro">
 
         <p class="section-kicker">Browse our range</p>
@@ -114,12 +134,10 @@
       <button class="close-btn" id="closeForm" aria-label="Close form">&times;</button>
 
       <h2 id="formTitle">Order Enquiry</h2>
-      <p class="form-note">
-        Orders are currently processed manually. Please provide as much detail as possible below.
-      </p>
-      <p class="form-note">
-        Proof of qualification is required before orders for TCM herbs and acupuncture supplies can be processed. Please attach a PDF or image of your relevant qualification.
-      </p>
+      <div class="form-progress">
+        <span class="active">Details</span>
+        <span>Products</span>
+      </div>
 
       <form
         name="order-form"
@@ -127,76 +145,253 @@
         data-netlify="true"
         enctype="multipart/form-data"
         action="/thank-you/"
+        class="order-form"
       >
         <input type="hidden" name="form-name" value="order-form" />
 
-        <input type="text" name="full-name" placeholder="Full Name" required />
-        <input type="text" name="clinic-name" placeholder="Clinic / Practice Name" required/>
-        <input type="email" name="email" placeholder="Email Address" required />
-        <input type="tel" name="phone" placeholder="Phone Number" required/>
+        <!-- STEP 1 -->
+        <div class="form-step active" id="step1">
+          <h3 class="step-title">Practitioner Details</h3>
 
-        <select name="product-category" required>
-          <option value="">Select Product Category</option>
-          <option value="Acupuncture Supplies">Acupuncture Supplies</option>
-          <option value="TCM Granules">TCM Granules</option>
-          <option value="Aura Supplements">Aura Supplements</option>
-          <option value="Mycology Nutrition">Mycology Nutrition</option>
-          <option value="Other">Other</option>
-        </select>
+          <input type="text" name="full-name" placeholder="Full Name" required />
+          <input type="text" name="clinic-name" placeholder="Clinic / Practice Name" required />
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Email Address" 
+            required 
+            pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+            title="Please enter a valid email address"
+          />
+          <input 
+            type="tel" 
+            name="phone" 
+            placeholder="Phone Number" 
+            required pattern="^[0-9+\s()-]{7,15}$"
+          />
 
-        <textarea
-          name="order-details"
-          rows="5"
-          placeholder="Order / Enquiry Details"
-          required
-        ></textarea>
+          <button type="button" class="btn next-btn">Continue</button>
+        </div>
 
-        <label class="upload-label">
-          Upload Qualification Document
-          <input type="file" name="qualification-upload" accept=".pdf,image/*" />
-        </label>
+        <!-- STEP 2 -->
+        <div class="form-step" id="step2">
+          <h3 class="step-title">Order Details</h3>
 
-        <label class="consent">
-          <input type="checkbox" name="qualified-confirmation" required />
-          I confirm that I am a qualified practitioner where required and that the information provided is accurate.
-        </label>
+          <!-- CATEGORY BUTTONS -->
+          <div class="product-options">
+            <button type="button" data-value="Acupuncture Supplies">Acupuncture</button>
+            <button type="button" data-value="TCM Granules">TCM Granules</button>
+            <button type="button" data-value="Aura Supplements">Supplements</button>
+            <button type="button" data-value="Mycology Nutrition">Mycology</button>
+          </div>
 
-        <button type="submit" class="btn">Submit Enquiry</button>
+          <input type="hidden" name="product-category" id="productCategory" required />
+
+          <input type="text" name="product-name" placeholder="Product Name / Formula" />
+          <input type="number" name="quantity" placeholder="Quantity" min="1" />
+
+          <textarea
+            name="order-details"
+            rows="4"
+            placeholder="Additional details (dosage, variations, notes)"
+          ></textarea>
+
+          <!-- VERIFICATION -->
+          <label class="upload-label">
+            Upload Qualification Document
+            <input type="file" name="qualification-upload" accept=".pdf,image/*" />
+          </label>
+
+          <label class="consent">
+            <input type="checkbox" name="qualified-confirmation" required />
+            I confirm I am a qualified practitioner where required.
+          </label>
+
+          <div class="form-actions">
+            <button type="button" class="back-btn">Back</button>
+            <button type="submit" class="btn">Submit Order</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
 
 
   <script>
-    const openBtn = document.getElementById("openForm");
-    const closeBtn = document.getElementById("closeForm");
-    const overlay = document.getElementById("formOverlay");
-    const categoryCards = document.querySelectorAll(".category-card");
+  // =========================
+  // ELEMENT REFERENCES
+  // =========================
+  const openBtn = document.getElementById("openForm");
+  const closeBtn = document.getElementById("closeForm");
+  const overlay = document.getElementById("formOverlay");
 
+  const categoryCards = document.querySelectorAll(".category-card");
+  const productButtons = document.querySelectorAll(".product-options button");
+  const categorySelect = document.getElementById("productCategory");
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  const step1 = document.getElementById("step1");
+  const step2 = document.getElementById("step2");
+  const nextBtn = document.querySelector(".next-btn");
+  const backBtn = document.querySelector(".back-btn");
+
+  const formInputs = document.querySelectorAll(".order-form input[required], .order-form textarea[required]");
+
+  const elements = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+  // =========================
+  // MODAL CONTROL
+  // =========================
+  if (openBtn && overlay) {
     openBtn.addEventListener("click", (e) => {
       e.preventDefault();
       overlay.classList.add("active");
       overlay.setAttribute("aria-hidden", "false");
     });
+  }
 
+  if (closeBtn && overlay) {
     closeBtn.addEventListener("click", () => {
       overlay.classList.remove("active");
       overlay.setAttribute("aria-hidden", "true");
     });
+  }
 
+  if (overlay) {
     overlay.addEventListener("click", (e) => {
       if (e.target === overlay) {
         overlay.classList.remove("active");
         overlay.setAttribute("aria-hidden", "true");
       }
     });
+  }
 
+
+  // =========================
+  // CATEGORY CARD → OPEN FORM
+  // =========================
+  if (categoryCards.length && overlay) {
     categoryCards.forEach((card) => {
       card.addEventListener("click", () => {
+        const label = card.querySelector(".category-label")?.innerText;
+
         overlay.classList.add("active");
         overlay.setAttribute("aria-hidden", "false");
+
+        if (categorySelect && label) {
+          categorySelect.value = label;
+        }
       });
     });
+  }
+
+
+  // =========================
+  // PRODUCT BUTTON SELECT
+  // =========================
+  if (productButtons.length && categorySelect) {
+    productButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        productButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        categorySelect.value = btn.dataset.value;
+      });
+    });
+  }
+
+
+  // =========================
+  // MOBILE NAV
+  // =========================
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+
+
+  // =========================
+  // STEP NAVIGATION (2-STEP FORM)
+  // =========================
+  if (nextBtn && step1 && step2) {
+    nextBtn.addEventListener("click", () => {
+      const inputs = step1.querySelectorAll("input[required]");
+      let valid = true;
+
+      inputs.forEach((input) => {
+        if (!input.checkValidity()) {
+          valid = false;
+          input.classList.add("invalid");
+          input.classList.remove("valid");
+        } else {
+          input.classList.add("valid");
+          input.classList.remove("invalid");
+        }
+      });
+
+      if (!valid) return;
+
+      step1.classList.remove("active");
+      step2.classList.add("active");
+
+      // UPDATE PROGRESS BAR → STEP 2
+      const steps = document.querySelectorAll(".form-progress span");
+      if (steps.length > 1) {
+        steps[0].classList.remove("active");
+        steps[1].classList.add("active");
+      }
+    });
+  }
+
+  if (backBtn && step1 && step2) {
+    backBtn.addEventListener("click", () => {
+      step2.classList.remove("active");
+      step1.classList.add("active");
+
+      // UPDATE PROGRESS BAR → STEP 1
+      const steps = document.querySelectorAll(".form-progress span");
+      if (steps.length > 1) {
+        steps[1].classList.remove("active");
+        steps[0].classList.add("active");
+      }
+    });
+  }
+
+  // LIVE VALIDATION
+  formInputs.forEach(input => {
+    input.addEventListener("input", () => {
+
+      // If empty → reset
+      if (!input.value.trim()) {
+        input.classList.remove("valid", "invalid");
+        return;
+      }
+
+      // If valid → green
+      if (input.checkValidity()) {
+        input.classList.add("valid");
+        input.classList.remove("invalid");
+      } 
+      // If invalid → red
+      else {
+        input.classList.add("invalid");
+        input.classList.remove("valid");
+      }
+
+    });
+  });
+
   </script>
 </body>
 </html>
