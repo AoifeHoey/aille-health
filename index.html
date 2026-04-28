@@ -146,8 +146,37 @@
         enctype="multipart/form-data"
         action="/thank-you/"
         class="order-form"
+
+        <textarea name="order-email-template" hidden>
+        NEW ORDER ENQUIRY – ÁILLE HEALTH CLINIC
+        --------------------------------------
+
+        PRACTITIONER DETAILS
+        --------------------
+        Name: {{full-name}}
+        Clinic: {{clinic-name}}
+        Email: {{email}}
+        Phone: {{phone}}
+
+        ORDER DETAILS
+        -------------
+        Category: {{product-category}}
+        Product / Formula: {{formula-name}}
+        Quantity: {{quantity}}
+
+        Notes:
+        {{order-details}}
+
+        VERIFICATION
+        ------------
+        Qualified Practitioner: {{qualified-confirmation}}
+
+        --------------------------------------
+        Submitted via aillehealth.ie
+        </textarea>
       >
         <input type="hidden" name="form-name" value="order-form" />
+        <input type="hidden" name="netlify-email" id="order-email-template" />
 
         <!-- STEP 1 -->
         <div class="form-step active" id="step1">
@@ -187,7 +216,7 @@
 
           <input type="hidden" name="product-category" id="productCategory" required />
 
-          <input type="text" name="product-name" placeholder="Product Name / Formula" />
+          <input type="text" name="formula-name" placeholder="Product Name / Formula" />
           <input type="number" name="quantity" placeholder="Quantity" min="1" />
 
           <textarea
@@ -203,7 +232,7 @@
           </label>
 
           <label class="consent">
-            <input type="checkbox" name="qualified-confirmation" required />
+            <input type="checkbox" name="qualified-confirmation" value="Yes" required />
             I confirm I am a qualified practitioner where required.
           </label>
 
