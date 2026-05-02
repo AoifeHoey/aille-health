@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Áille Admin Panel</title>
+
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      background: #1f2623;
+      color: #f4efe8;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .user-card {
+      background: rgba(255,255,255,0.05);
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    .user-card p {
+      margin: 4px 0;
+    }
+
+    .files a {
+      display: block;
+      color: #d3b06b;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .approve {
+      background: #98aa9e;
+      color: #1f2623;
+    }
+
+    .reject {
+      background: #d46a6a;
+      color: white;
+    }
+
+    .status {
+      font-weight: bold;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Practitioner Approvals</h1>
+<div id="usersContainer"></div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getAuth,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  updateDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+import { getFunctions, httpsCallable } 
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-functions.js";
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyC-4pUYzJt5cIB3WBT4CIQHAHXyrl9serY",
+    authDomain: "aille-health-clinic.firebaseapp.com",
+    projectId: "aille-health-clinic",
+    storageBucket: "aille-health-clinic.firebasestorage.app",
+    messagingSenderId: "1015659627183",
+    appId: "1:1015659627183:web:ea3807b6b671a7ef1fca5a",
+    measurementId: "G-66K135JSM5"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+
+// 🔐 ADMIN LOCK
+onAuthStateChanged(auth, (user) => {
+  if (!user || user.email !== "info@aillehealth.ie") {
+    alert("Access denied");
+    window.location.href = "/";
+  } else {
+    loadUsers();
+  }
+});
+
+
+const container = document.getElementById("usersContainer");
+
+
+// 📥 LOAD USERS
+async function loadUsers() {
+  container.innerHTML = "Loading...";
+
+  const snapshot = await getDocs(collection(db, "users"));
+
+  container.innerHTML = "";
+
+  snapshot.forEach(docSnap => {
+    const data = docSnap.data();
+
+    const card = document.createElement("div");
+    card.className = "user-card";
+
+    card.innerHTML = `
+      <p><strong>${data.fullName}</strong></p>
+      <p>${data.email}</p>
+      <p>${data.clinicName}</p>
+      <p class="status">Status: ${data.status}</p>
+
+      <div class="files">
+        ${(data.certificationURLs || []).map(url =>
+          `<a href="${url}" target="_blank">View File</a>`
+        ).join("")}
+      </div>
+
+      <div class="actions">
+        <button class="approve">Approve</button>
+        <button class="reject">Reject</button>
+      </div>
+    `;
+
+    const approveBtn = card.querySelector(".approve");
+    const rejectBtn = card.querySelector(".reject");
+
+    approveBtn.addEventListener("click", () => approveUser(docSnap.id, data));
+    rejectBtn.addEventListener("click", () => rejectUser(docSnap.id));
+
+    container.appendChild(card);
+  });
+}
+
+
+// ✅ APPROVE
+async function approveUser(userId, userData) {
+  try {
+    // 1. Update Firestore
+    await updateDoc(doc(db, "users", userId), {
+      status: "approved"
+    });
+
+    // 2. Call Firebase Function
+    const sendEmail = httpsCallable(functions, "sendApprovalEmail");
+
+    await sendEmail({
+      email: userData.email,
+      name: userData.fullName
+    });
+
+    alert("User approved & email sent ✅");
+
+  } catch (error) {
+    console.error(error);
+    alert("Approved, but email failed ❌");
+  }
+
+  loadUsers();
+}
+
+// ❌ REJECT
+async function rejectUser(userId) {
+  await updateDoc(doc(db, "users", userId), {
+    status: "rejected"
+  });
+
+  alert("User rejected");
+  loadUsers();
+}
+
+</script>
+
+</body>
+</html>
