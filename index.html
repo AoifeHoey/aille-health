@@ -136,7 +136,7 @@
       </p>
 
       <!-- ========================= -->
-      <!-- LOGIN (DEFAULT VIEW) -->
+      <!-- LOGIN + REGISTER -->
       <!-- ========================= -->
       <div class="form-inner">
         <div class="form-content">
@@ -163,41 +163,44 @@
               New here?
               <span id="goToRegister">Register for access</span>
             </p>
-        </div>
-
-        <!-- REGISTER -->
-        <div class="form-step" id="stepRegister">
-          <h3 class="step-title">Practitioner Registration</h3>
-
-          <div class="form-grid">
-            <input type="text" id="regName" placeholder="Full Name" />
-            <input type="text" id="regClinic" placeholder="Clinic Name" />
-            <input type="email" id="regEmail" placeholder="Email Address" />
-            <input type="password" id="regPassword" placeholder="Password" />
           </div>
 
-          <div class="upload-box">
-            <label for="regFile" class="upload-area">
-              <span class="upload-icon">📄</span>
-              <span class="upload-text">Click to upload certification</span>
-              <span class="upload-sub">PDF, JPG, PNG</span>
-            </label>
+          <!-- REGISTER -->
+          <div class="form-step" id="stepRegister">
+            <h3 class="step-title">Practitioner Registration</h3>
 
-            <input type="file" id="regFile" accept=".pdf,image/*" multiple hidden />
+            <div class="form-grid">
+              <input type="text" id="regName" placeholder="Full Name" />
+              <input type="text" id="regClinic" placeholder="Clinic Name" />
+              <input type="email" id="regEmail" placeholder="Email Address" />
+              <input type="password" id="regPassword" placeholder="Password" />
+            </div>
 
-            <div class="file-preview" id="filePreview">
-              No file selected
+            <div class="upload-box">
+              <label for="regFile" class="upload-area">
+                <span class="upload-icon">📄</span>
+                <span class="upload-text">Click to upload certification</span>
+                <span class="upload-sub">PDF, JPG, PNG</span>
+              </label>
+
+              <input type="file" id="regFile" accept=".pdf,image/*" multiple hidden />
+
+              <div class="file-preview" id="filePreview">
+                No file selected
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button class="back-btn" id="backToChoiceFromRegister">Back</button>
+              <button class="btn primary" id="registerBtn">Register</button>
             </div>
           </div>
 
+          <!-- ✅ STATUS (NOW GLOBAL FOR BOTH LOGIN + REGISTER) -->
           <div id="formStatus" class="form-status"></div>
 
-          <div class="form-actions">
-            <button class="back-btn" id="backToChoiceFromRegister">Back</button>
-            <button class="btn primary" id="registerBtn">Register</button>
-          </div>
-        </div>
-      </div>
+        </div> <!-- form-content -->
+      </div> <!-- form-inner -->
     </div>
   </div>
 
@@ -229,7 +232,7 @@
     apiKey: "AIzaSyC-4pUYzJt5cIB3WBT4CIQHAHXyrl9serY",
     authDomain: "aille-health-clinic.firebaseapp.com",
     projectId: "aille-health-clinic",
-    storageBucket: "aille-health-clinic.firebasestorage.app",
+    storageBucket: "aille-health-clinic.appspot.com",
     messagingSenderId: "1015659627183",
     appId: "1:1015659627183:web:ea3807b6b671a7ef1fca5a",
     measurementId: "G-66K135JSM5"
