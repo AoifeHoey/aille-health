@@ -40,7 +40,6 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url('noise.png');
   opacity: 0.03;
   pointer-events: none;
 }

@@ -27,7 +27,8 @@
             <a href="#contact">Contact</a>
           </nav>
 
-          <a href="#" class="shop-link" id="openForm">Shop</a>
+          <!-- <a href="#" class="shop-link" id="openForm">Shop</a> -->
+          <a href="https://aillehealth.myshopify.com" class="shop-link">Shop</a>
         </div>
 
       </header>
@@ -76,29 +77,29 @@
       </div>
 
       <div class="category-grid">
-        <button class="category-card" type="button" aria-label="Acupuncture supplies coming soon">
+        <a href="https://aillehealth.myshopify.com" class="category-card">
           <img src="acupuncture.jpg" alt="Acupuncture supplies" />
           <span class="category-overlay"></span>
           <span class="category-label">Acupuncture Supplies</span>
-        </button>
+        </a>
 
-        <button class="category-card" type="button" aria-label="TCM Granules coming soon">
+        <a href="https://aillehealth.myshopify.com" class="category-card">
           <img src="granules.jpg" alt="TCM granules" />
           <span class="category-overlay"></span>
           <span class="category-label">TCM Granules</span>
-        </button>
+        </a>
 
-        <button class="category-card" type="button" aria-label="Aura Supplements coming soon">
+        <a href="https://aillehealth.myshopify.com" class="category-card" aria-label="Aura Supplements coming soon">
           <img src="aura.jpg" alt="Aura supplements" />
           <span class="category-overlay"></span>
           <span class="category-label">Aura Supplements</span>
-        </button>
+        </a>
 
-        <button class="category-card" type="button" aria-label="Mycology Nutrition coming soon">
+        <a href="https://aillehealth.myshopify.com" class="category-card" aria-label="Mycology Nutrition coming soon">
           <img src="mycology.jpg" alt="Mycology nutrition" />
           <span class="category-overlay"></span>
           <span class="category-label">Mycology Nutrition</span>
-        </button>
+        </a>
       </div>
     </section>
 
@@ -126,7 +127,7 @@
     </footer>
   </main>
 
-  <div class="form-overlay" id="formOverlay" aria-hidden="true">
+  <!-- <div class="form-overlay" id="formOverlay" aria-hidden="true">
     <div class="form-modal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
       <button class="close-btn" id="closeForm" aria-label="Close form">&times;</button>
 
@@ -135,13 +136,13 @@
         Upload your certification to request access to practitioner pricing.
       </p>
 
-      <!-- ========================= -->
-      <!-- LOGIN + REGISTER -->
-      <!-- ========================= -->
+      ========================= 
+      LOGIN + REGISTER
+      =========================
       <div class="form-inner">
         <div class="form-content">
 
-          <!-- LOGIN -->
+          LOGIN
           <div class="form-step active" id="stepLogin">
             <h3 class="step-title">Login</h3>
 
@@ -165,7 +166,7 @@
             </p>
           </div>
 
-          <!-- REGISTER -->
+          REGISTER
           <div class="form-step" id="stepRegister">
             <h3 class="step-title">Practitioner Registration</h3>
 
@@ -196,201 +197,204 @@
             </div>
           </div>
 
-          <!-- ✅ STATUS (NOW GLOBAL FOR BOTH LOGIN + REGISTER) -->
+          ✅ STATUS (NOW GLOBAL FOR BOTH LOGIN + REGISTER)
           <div id="formStatus" class="form-status"></div>
 
-        </div> <!-- form-content -->
-      </div> <!-- form-inner -->
+        </div>  form-content 
+      </div> form-inner 
     </div>
-  </div>
+  </div> -->
 
-<script type="module">
+<!-- <script type="module"> 
   // =========================
   // FIREBASE IMPORTS
   // =========================
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-  import { 
-    getAuth, 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword,
-    onAuthStateChanged
-  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  // import { 
+  //   getAuth, 
+  //   createUserWithEmailAndPassword, 
+  //   signInWithEmailAndPassword,
+  //   onAuthStateChanged
+  // } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+  // import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
-  import { 
-    getFirestore, 
-    doc,
-    setDoc,
-    getDoc
-  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  // import { 
+  //   getFirestore, 
+  //   doc,
+  //   setDoc,
+  //   getDoc
+  // } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
   // =========================
   // FIREBASE CONFIG
   // =========================
-  const firebaseConfig = {
-    apiKey: "AIzaSyC-4pUYzJt5cIB3WBT4CIQHAHXyrl9serY",
-    authDomain: "aille-health-clinic.firebaseapp.com",
-    projectId: "aille-health-clinic",
-    storageBucket: "aille-health-clinic.appspot.com",
-    messagingSenderId: "1015659627183",
-    appId: "1:1015659627183:web:ea3807b6b671a7ef1fca5a",
-    measurementId: "G-66K135JSM5"
-  };
+  // const firebaseConfig = {
+  //   apiKey: "AIzaSyC-4pUYzJt5cIB3WBT4CIQHAHXyrl9serY",
+  //   authDomain: "aille-health-clinic.firebaseapp.com",
+  //   projectId: "aille-health-clinic",
+  //   storageBucket: "aille-health-clinic.appspot.com",
+  //   messagingSenderId: "1015659627183",
+  //   appId: "1:1015659627183:web:ea3807b6b671a7ef1fca5a",
+  //   measurementId: "G-66K135JSM5"
+  // };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-  const storage = getStorage(app);
+  // const app = initializeApp(firebaseConfig);
+  // const auth = getAuth(app);
+  // const db = getFirestore(app);
+  // const storage = getStorage(app);
 
   // =========================
   // ELEMENT REFERENCES
   // =========================
-  const openBtn = document.getElementById("openForm");
-  const closeBtn = document.getElementById("closeForm");
-  const overlay = document.getElementById("formOverlay");
+  // const openBtn = document.getElementById("openForm");
+  // const closeBtn = document.getElementById("closeForm");
+  // const overlay = document.getElementById("formOverlay");
 
-  const categoryCards = document.querySelectorAll(".category-card");
+  // const categoryCards = document.querySelectorAll(".category-card");
 
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("navLinks");
+  // const hamburger = document.getElementById("hamburger");
+  // const navLinks = document.getElementById("navLinks");
 
-  const elements = document.querySelectorAll(".fade-in");
+  // const elements = document.querySelectorAll(".fade-in");
 
-  const stepLogin = document.getElementById("stepLogin");
-  const stepRegister = document.getElementById("stepRegister");
+  // const stepLogin = document.getElementById("stepLogin");
+  // const stepRegister = document.getElementById("stepRegister");
 
-  const goToRegister = document.getElementById("goToRegister");
-  const backToLogin = document.getElementById("backToChoiceFromRegister");
+  // const goToRegister = document.getElementById("goToRegister");
+  // const backToLogin = document.getElementById("backToChoiceFromRegister");
 
-  const filePreview = document.getElementById("filePreview");
-  const uploadArea = document.querySelector(".upload-area");
-  const fileInput = document.getElementById("regFile");
+  // const filePreview = document.getElementById("filePreview");
+  // const uploadArea = document.querySelector(".upload-area");
+  // const fileInput = document.getElementById("regFile");
 
-  const formStatus = document.getElementById("formStatus");
+  // const formStatus = document.getElementById("formStatus");
 
-  const registerBtn = document.getElementById("registerBtn");
-  const loginBtn = document.getElementById("loginBtn");
+  // const registerBtn = document.getElementById("registerBtn");
+  // const loginBtn = document.getElementById("loginBtn");
 
-  let selectedFiles = [];
+  // let selectedFiles = [];
 
-  const MAX_FILES = 5;
-  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
+  // const MAX_FILES = 5;
+  // const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
 
   // =========================
   // STATUS HELPERS
   // =========================
-  function setLoading(message = "Submitting...") {
-    formStatus.className = "form-status loading";
-    formStatus.innerHTML = `<span class="spinner"></span>${message}`;
-  }
+  // function setLoading(message = "Submitting...") {
+  //   formStatus.className = "form-status loading";
+  //   formStatus.innerHTML = `<span class="spinner"></span>${message}`;
+  // }
 
-  function setSuccess(message) {
-    formStatus.className = "form-status success";
-    formStatus.textContent = message;
-  }
+  // function setSuccess(message) {
+  //   formStatus.className = "form-status success";
+  //   formStatus.textContent = message;
+  // }
 
-  function setError(message) {
-    formStatus.className = "form-status error";
-    formStatus.textContent = message;
-  }
+  // function setError(message) {
+  //   formStatus.className = "form-status error";
+  //   formStatus.textContent = message;
+  // }
 
-  function clearStatus() {
-    formStatus.className = "form-status";
-    formStatus.textContent = "";
-  }
+  // function clearStatus() {
+  //   formStatus.className = "form-status";
+  //   formStatus.textContent = "";
+  // }
 
   // =========================
   // FILE VALIDATION 
   // =========================
-  function validateFiles(newFiles) {
-    if (selectedFiles.length + newFiles.length > MAX_FILES) {
-      setError(`Maximum ${MAX_FILES} files allowed.`);
-      return false;
-    }
+  // function validateFiles(newFiles) {
+  //   if (selectedFiles.length + newFiles.length > MAX_FILES) {
+  //     setError(`Maximum ${MAX_FILES} files allowed.`);
+  //     return false;
+  //   }
 
-    for (const file of newFiles) {
-      if (file.size > MAX_FILE_SIZE) {
-        setError(`${file.name} exceeds 5MB limit.`);
-        return false;
-      }
-    }
+  //   for (const file of newFiles) {
+  //     if (file.size > MAX_FILE_SIZE) {
+  //       setError(`${file.name} exceeds 5MB limit.`);
+  //       return false;
+  //     }
+  //   }
 
-    return true;
-  }
+  //   return true;
+  // }
 
   // =========================
   // STEP CONTROL
   // =========================
-  function showStep(step) {
-    [stepLogin, stepRegister].forEach(s => {
-      s.classList.remove("active");
-    });
+  // function showStep(step) {
+  //   [stepLogin, stepRegister].forEach(s => {
+  //     s.classList.remove("active");
+  //   });
 
-    step.classList.add("active");
-    clearStatus();
-  }
+  //   step.classList.add("active");
+  //   clearStatus();
+  // }
 
   // =========================
   // MODAL CONTROL
   // =========================
-  function openModal() {
-    overlay.classList.add("active");
-    overlay.setAttribute("aria-hidden", "false");
-    showStep(stepLogin);
-  }
+  // function openModal() {
+  //   overlay.classList.add("active");
+  //   overlay.setAttribute("aria-hidden", "false");
+  //   showStep(stepLogin);
+  // }
 
-  function closeModal() {
-    overlay.classList.remove("active");
-    overlay.setAttribute("aria-hidden", "true");
-    clearStatus();
-  }
+  // function closeModal() {
+  //   overlay.classList.remove("active");
+  //   overlay.setAttribute("aria-hidden", "true");
+  //   clearStatus();
+  // }
 
-  openBtn?.addEventListener("click", async (e) => {
-    e.preventDefault();
+  // openBtn?.addEventListener("click", async (e) => {
+  //   e.preventDefault();
 
-    const user = auth.currentUser;
+  //   const user = auth.currentUser;
 
-    if (!user) {
-      openModal();
-      return;
-    }
+  //   if (!user) {
+  //     openModal();
+  //     return;
+  //   }
 
-    const userRef = doc(db, "users", user.uid);
-    const snap = await getDoc(userRef);
+  //   const userRef = doc(db, "users", user.uid);
+  //   const snap = await getDoc(userRef);
 
-    if (!snap.exists() || snap.data().status !== "approved") {
-      openModal();
-      return;
-    }
+  //   if (!snap.exists() || snap.data().status !== "approved") {
+  //     openModal();
+  //     return;
+  //   }
 
-    // Approved → go to Shopify
-    window.location.href = "https://aillehealth.myshopify.com";
-  });
+  //   // Approved → go to Shopify
+  //   window.location.href = "https://aillehealth.myshopify.com";
+  // });
 
-  closeBtn?.addEventListener("click", closeModal);
+  // closeBtn?.addEventListener("click", closeModal);
 
-  overlay?.addEventListener("click", (e) => {
-    if (e.target === overlay) {
-      closeModal();
-    }
-  });
+  // overlay?.addEventListener("click", (e) => {
+  //   if (e.target === overlay) {
+  //     closeModal();
+  //   }
+  // });
 
-  categoryCards.forEach((card) => {
-    card.addEventListener("click", openModal);
-  });
+  // categoryCards.forEach((card) => {
+  //   card.addEventListener("click", openModal);
+  // });
 
-  goToRegister?.addEventListener("click", () => {
-    showStep(stepRegister);
-  });
+  // goToRegister?.addEventListener("click", () => {
+  //   showStep(stepRegister);
+  // });
 
-  backToLogin?.addEventListener("click", () => {
-    showStep(stepLogin);
-  });
+  // backToLogin?.addEventListener("click", () => {
+  //   showStep(stepLogin);
+  // });
 
   // =========================
   // MOBILE NAV
-  // =========================
+  // =========================-->
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
   hamburger?.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
@@ -398,6 +402,7 @@
   // =========================
   // FADE IN OBSERVER
   // =========================
+  const elements = document.querySelectorAll(".fade-in");
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -411,271 +416,271 @@
   // =========================
   // FILE UPLOAD UI
   // =========================
-  function updateFileUI() {
-    filePreview.innerHTML = `<div class="file-count">${selectedFiles.length}/${MAX_FILES} files selected</div>`;
+  // function updateFileUI() {
+  //   filePreview.innerHTML = `<div class="file-count">${selectedFiles.length}/${MAX_FILES} files selected</div>`;
 
-    if (selectedFiles.length === 0) {
-      filePreview.innerHTML = "No file selected";
-      uploadArea.classList.remove("has-file");
-      return;
-    }
+  //   if (selectedFiles.length === 0) {
+  //     filePreview.innerHTML = "No file selected";
+  //     uploadArea.classList.remove("has-file");
+  //     return;
+  //   }
 
-    uploadArea.classList.add("has-file");
+  //   uploadArea.classList.add("has-file");
 
-    selectedFiles.forEach((file, index) => {
-      const sizeKB = (file.size / 1024).toFixed(1);
+  //   selectedFiles.forEach((file, index) => {
+  //     const sizeKB = (file.size / 1024).toFixed(1);
 
-      let previewHTML = "";
+  //     let previewHTML = "";
 
-      if (file.type.startsWith("image/")) {
-        const reader = new FileReader();
+  //     if (file.type.startsWith("image/")) {
+  //       const reader = new FileReader();
 
-        reader.onload = function (e) {
-          previewHTML = `
-            <div class="file-card">
-              <img src="${e.target.result}" class="file-thumb" />
-              <div class="file-meta">
-                <span>✔ ${file.name}</span>
-                <span class="file-size">${sizeKB} KB</span>
-              </div>
-              <button class="file-remove" data-index="${index}">Remove</button>
-            </div>
-          `;
+  //       reader.onload = function (e) {
+  //         previewHTML = `
+  //           <div class="file-card">
+  //             <img src="${e.target.result}" class="file-thumb" />
+  //             <div class="file-meta">
+  //               <span>✔ ${file.name}</span>
+  //               <span class="file-size">${sizeKB} KB</span>
+  //             </div>
+  //             <button class="file-remove" data-index="${index}">Remove</button>
+  //           </div>
+  //         `;
 
-          filePreview.insertAdjacentHTML("beforeend", previewHTML);
-        };
+  //         filePreview.insertAdjacentHTML("beforeend", previewHTML);
+  //       };
 
-        reader.readAsDataURL(file);
+  //       reader.readAsDataURL(file);
 
-      } else {
-        previewHTML = `
-          <div class="file-card">
-            <div class="file-icon">📄</div>
-            <div class="file-meta">
-              <span>✔ ${file.name}</span>
-              <span class="file-size">${sizeKB} KB</span>
-            </div>
-            <button class="file-remove" data-index="${index}">Remove</button>
-          </div>
-        `;
+  //     } else {
+  //       previewHTML = `
+  //         <div class="file-card">
+  //           <div class="file-icon">📄</div>
+  //           <div class="file-meta">
+  //             <span>✔ ${file.name}</span>
+  //             <span class="file-size">${sizeKB} KB</span>
+  //           </div>
+  //           <button class="file-remove" data-index="${index}">Remove</button>
+  //         </div>
+  //       `;
 
-        filePreview.insertAdjacentHTML("beforeend", previewHTML);
-      }
-    });
-  }
+  //       filePreview.insertAdjacentHTML("beforeend", previewHTML);
+  //     }
+  //   });
+  // }
 
-  filePreview.addEventListener("click", (e) => {
-    if (e.target.classList.contains("file-remove")) {
-      const index = parseInt(e.target.dataset.index);
-      selectedFiles.splice(index, 1);
-      updateFileUI();
-    }
-  });
+  // filePreview.addEventListener("click", (e) => {
+  //   if (e.target.classList.contains("file-remove")) {
+  //     const index = parseInt(e.target.dataset.index);
+  //     selectedFiles.splice(index, 1);
+  //     updateFileUI();
+  //   }
+  // });
 
-  fileInput.addEventListener("change", () => {
-    const newFiles = Array.from(fileInput.files);
+  // fileInput.addEventListener("change", () => {
+  //   const newFiles = Array.from(fileInput.files);
 
-    if (!validateFiles(newFiles)) return;
+  //   if (!validateFiles(newFiles)) return;
 
-    selectedFiles = [...selectedFiles, ...newFiles];
-    updateFileUI();
-    clearStatus();
-    fileInput.value = "";
-  });
+  //   selectedFiles = [...selectedFiles, ...newFiles];
+  //   updateFileUI();
+  //   clearStatus();
+  //   fileInput.value = "";
+  // });
 
-  uploadArea?.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    uploadArea.classList.add("dragging");
-  });
+  // uploadArea?.addEventListener("dragover", (e) => {
+  //   e.preventDefault();
+  //   uploadArea.classList.add("dragging");
+  // });
 
-  uploadArea?.addEventListener("dragleave", () => {
-    uploadArea.classList.remove("dragging");
-  });
+  // uploadArea?.addEventListener("dragleave", () => {
+  //   uploadArea.classList.remove("dragging");
+  // });
 
-  uploadArea.addEventListener("drop", (e) => {
-    e.preventDefault();
-    uploadArea.classList.remove("dragging");
+  // uploadArea.addEventListener("drop", (e) => {
+  //   e.preventDefault();
+  //   uploadArea.classList.remove("dragging");
 
-    const droppedFiles = Array.from(e.dataTransfer.files);
+  //   const droppedFiles = Array.from(e.dataTransfer.files);
 
-    if (!validateFiles(droppedFiles)) return;
+  //   if (!validateFiles(droppedFiles)) return;
 
-    selectedFiles = [...selectedFiles, ...droppedFiles];
-    updateFileUI();
-    clearStatus();
+  //   selectedFiles = [...selectedFiles, ...droppedFiles];
+  //   updateFileUI();
+  //   clearStatus();
 
-    fileInput.value = "";
-  });
+  //   fileInput.value = "";
+  // });
 
-  // =========================
-  // REGISTER
-  // =========================
-  registerBtn?.addEventListener("click", async () => {
-    const name = document.getElementById("regName").value.trim();
-    const clinic = document.getElementById("regClinic").value.trim();
-    const email = document.getElementById("regEmail").value.trim();
-    const password = document.getElementById("regPassword").value.trim();
+  // // =========================
+  // // REGISTER
+  // // =========================
+  // registerBtn?.addEventListener("click", async () => {
+  //   const name = document.getElementById("regName").value.trim();
+  //   const clinic = document.getElementById("regClinic").value.trim();
+  //   const email = document.getElementById("regEmail").value.trim();
+  //   const password = document.getElementById("regPassword").value.trim();
     
-    if (selectedFiles.length === 0) {
-      setError("Please upload at least one certification file.");
-      return;
-    }
+  //   if (selectedFiles.length === 0) {
+  //     setError("Please upload at least one certification file.");
+  //     return;
+  //   }
 
-    if (!name || !clinic || !email || !password || selectedFiles.length === 0) {
-      setError("Please complete all fields and upload certification.");
-      return;
-    }
+  //   if (!name || !clinic || !email || !password || selectedFiles.length === 0) {
+  //     setError("Please complete all fields and upload certification.");
+  //     return;
+  //   }
 
-    registerBtn.textContent = "Submitting...";
-    registerBtn.disabled = true;
-    setLoading("Uploading your details...");
+  //   registerBtn.textContent = "Submitting...";
+  //   registerBtn.disabled = true;
+  //   setLoading("Uploading your details...");
 
-    try {
-      const userCred = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCred.user;
+  //   try {
+  //     const userCred = await createUserWithEmailAndPassword(auth, email, password);
+  //     const user = userCred.user;
 
-      const fileURLs = [];
+  //     const fileURLs = [];
 
-        for (const file of selectedFiles) {
-          const storageRef = ref(storage, `certifications/${user.uid}/${file.name}`);
+  //       for (const file of selectedFiles) {
+  //         const storageRef = ref(storage, `certifications/${user.uid}/${file.name}`);
           
-          await uploadBytes(storageRef, file);
+  //         await uploadBytes(storageRef, file);
           
-          const url = await getDownloadURL(storageRef);
-          fileURLs.push(url);
-        }
+  //         const url = await getDownloadURL(storageRef);
+  //         fileURLs.push(url);
+  //       }
 
-      await setDoc(doc(db, "users", user.uid), {
-        uid: user.uid,
-        fullName: name,
-        clinicName: clinic,
-        email: email,
-        certificationURLs: fileURLs, // ✅ new (array)
-        status: "pending",
-        createdAt: new Date()
-      });
+  //     await setDoc(doc(db, "users", user.uid), {
+  //       uid: user.uid,
+  //       fullName: name,
+  //       clinicName: clinic,
+  //       email: email,
+  //       certificationURLs: fileURLs, // ✅ new (array)
+  //       status: "pending",
+  //       createdAt: new Date()
+  //     });
 
-      setSuccess("Registration submitted. Await approval.");
-      registerBtn.textContent = "Submitted";
+  //     setSuccess("Registration submitted. Await approval.");
+  //     registerBtn.textContent = "Submitted";
 
-      setTimeout(() => {
-        showStep(stepLogin);
-        registerBtn.textContent = "Register";
-        registerBtn.disabled = false;
-      }, 2500);
+  //     setTimeout(() => {
+  //       showStep(stepLogin);
+  //       registerBtn.textContent = "Register";
+  //       registerBtn.disabled = false;
+  //     }, 2500);
 
-    } catch (err) {
-      console.error(err);
+  //   } catch (err) {
+  //     console.error(err);
 
-      if (err.code === "auth/email-already-in-use") {
-        setError("Account already exists. Please log in.");
+  //     if (err.code === "auth/email-already-in-use") {
+  //       setError("Account already exists. Please log in.");
 
-        setTimeout(() => {
-          showStep(stepLogin);
-        }, 1500);
-      } else {
-        setError(err.message || "An error occurred during registration.");
-      }
+  //       setTimeout(() => {
+  //         showStep(stepLogin);
+  //       }, 1500);
+  //     } else {
+  //       setError(err.message || "An error occurred during registration.");
+  //     }
 
-      registerBtn.textContent = "Register";
-      registerBtn.disabled = false;
-    }
-  });
+  //     registerBtn.textContent = "Register";
+  //     registerBtn.disabled = false;
+  //   }
+  // });
 
-  // =========================
-  // LOGIN
-  // =========================
-  loginBtn?.addEventListener("click", async () => {
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
+  // // =========================
+  // // LOGIN
+  // // =========================
+  // loginBtn?.addEventListener("click", async () => {
+  //   const email = document.getElementById("loginEmail").value.trim();
+  //   const password = document.getElementById("loginPassword").value.trim();
 
-    if (!email || !password) {
-      setError("Please enter email and password.");
-      return;
-    }
+  //   if (!email || !password) {
+  //     setError("Please enter email and password.");
+  //     return;
+  //   }
 
-    loginBtn.textContent = "Logging in...";
-    loginBtn.disabled = true;
-    setLoading("Checking your account...");
+  //   loginBtn.textContent = "Logging in...";
+  //   loginBtn.disabled = true;
+  //   setLoading("Checking your account...");
 
-    try {
-      const userCred = await signInWithEmailAndPassword(auth, email, password);
-      const user = userCred.user;
+  //   try {
+  //     const userCred = await signInWithEmailAndPassword(auth, email, password);
+  //     const user = userCred.user;
 
-      const userRef = doc(db, "users", user.uid);
-      const userSnap = await getDoc(userRef);
+  //     const userRef = doc(db, "users", user.uid);
+  //     const userSnap = await getDoc(userRef);
 
-      if (!userSnap.exists()) {
-        setError("User record not found.");
-        resetLoginBtn();
-        return;
-      }
+  //     if (!userSnap.exists()) {
+  //       setError("User record not found.");
+  //       resetLoginBtn();
+  //       return;
+  //     }
 
-      const userData = userSnap.data();
+  //     const userData = userSnap.data();
 
-      if (userData.status !== "approved") {
-        setError("Your account is pending approval.");
-        resetLoginBtn();
-        return;
-      }
+  //     if (userData.status !== "approved") {
+  //       setError("Your account is pending approval.");
+  //       resetLoginBtn();
+  //       return;
+  //     }
 
-      setSuccess("Login successful");
+  //     setSuccess("Login successful");
 
-      console.log("USER:", user.email);
-      console.log("STATUS:", userData.status);
+  //     console.log("USER:", user.email);
+  //     console.log("STATUS:", userData.status);
 
-      loginBtn.textContent = "Login";
-      loginBtn.disabled = false;
+  //     loginBtn.textContent = "Login";
+  //     loginBtn.disabled = false;
 
-      setTimeout(() => {
-        if (user.email === "info@aillehealth.ie") {
-          console.log("Redirecting to admin...");
-          window.location.href = "/admin.html";
-        } else { 
-          console.log("Redirecting to Shopify...");
-          window.location.href = "https://aillehealth.myshopify.com";
-        }
-      }, 1000);
+  //     setTimeout(() => {
+  //       if (user.email === "info@aillehealth.ie") {
+  //         console.log("Redirecting to admin...");
+  //         window.location.href = "/admin.html";
+  //       } else { 
+  //         console.log("Redirecting to Shopify...");
+  //         window.location.href = "https://aillehealth.myshopify.com";
+  //       }
+  //     }, 1000);
 
-    } catch (err) {
-      console.error(err);
+  //   } catch (err) {
+  //     console.error(err);
 
-      if (err.code === "auth/user-not-found") {
-        setError("No account found with this email.");
-      } else if (err.code === "auth/wrong-password") {
-        setError("Incorrect password.");
-      } else if (err.code === "auth/invalid-email") {
-        setError("Invalid email format.");
-      } else {
-        setError("Login failed. Please try again.");
-      }
+  //     if (err.code === "auth/user-not-found") {
+  //       setError("No account found with this email.");
+  //     } else if (err.code === "auth/wrong-password") {
+  //       setError("Incorrect password.");
+  //     } else if (err.code === "auth/invalid-email") {
+  //       setError("Invalid email format.");
+  //     } else {
+  //       setError("Login failed. Please try again.");
+  //     }
 
-      resetLoginBtn();
-    }
-  });
+  //     resetLoginBtn();
+  //   }
+  // });
 
-  function resetLoginBtn() {
-    loginBtn.textContent = "Login";
-    loginBtn.disabled = false;
-  }
+  // function resetLoginBtn() {
+  //   loginBtn.textContent = "Login";
+  //   loginBtn.disabled = false;
+  // }
 
-  // =========================
-  // AUTO REDIRECT APPROVED USERS
-  // =========================
-  onAuthStateChanged(auth, async (user) => {
-    if (!user) return;
+  // // =========================
+  // // AUTO REDIRECT APPROVED USERS
+  // // =========================
+  // onAuthStateChanged(auth, async (user) => {
+  //   if (!user) return;
 
-    const userRef = doc(db, "users", user.uid);
-    const snap = await getDoc(userRef);
+  //   const userRef = doc(db, "users", user.uid);
+  //   const snap = await getDoc(userRef);
 
-    if (snap.exists() && snap.data().status === "approved") {
-      if (user.email === "info@aillehealth.ie") {
-        window.location.href = "/admin.html";
-      } else {
-        window.location.href = "https://aillehealth.myshopify.com";
-      }
-    }
-  });
+  //   if (snap.exists() && snap.data().status === "approved") {
+  //     if (user.email === "info@aillehealth.ie") {
+  //       window.location.href = "/admin.html";
+  //     } else {
+  //       window.location.href = "https://aillehealth.myshopify.com";
+  //     }
+  //   }
+  // });
 </script>
 </body>
 </html>
