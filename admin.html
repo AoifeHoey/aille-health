@@ -161,7 +161,7 @@ async function loadUsers() {
   });
 }
 
-
+const functions = getFunctions(app);
 // ✅ APPROVE
 async function approveUser(userId, userData) {
   try {
@@ -171,6 +171,7 @@ async function approveUser(userId, userData) {
     });
 
     // 2. Call Firebase Function
+    
     const sendEmail = httpsCallable(functions, "sendApprovalEmail");
 
     await sendEmail({

@@ -343,9 +343,26 @@
     clearStatus();
   }
 
-  openBtn?.addEventListener("click", (e) => {
+  openBtn?.addEventListener("click", async (e) => {
     e.preventDefault();
-    openModal();
+
+    const user = auth.currentUser;
+
+    if (!user) {
+      openModal();
+      return;
+    }
+
+    const userRef = doc(db, "users", user.uid);
+    const snap = await getDoc(userRef);
+
+    if (!snap.exists() || snap.data().status !== "approved") {
+      openModal();
+      return;
+    }
+
+    // Approved → go to Shopify
+    window.location.href = "https://aillehealth.myshopify.com";
   });
 
   closeBtn?.addEventListener("click", closeModal);
@@ -601,8 +618,20 @@
 
       setSuccess("Login successful");
 
+      console.log("USER:", user.email);
+      console.log("STATUS:", userData.status);
+
+      loginBtn.textContent = "Login";
+      loginBtn.disabled = false;
+
       setTimeout(() => {
-        window.location.href = "/";
+        if (user.email === "info@aillehealth.ie") {
+          console.log("Redirecting to admin...");
+          window.location.href = "/admin.html";
+        } else { 
+          console.log("Redirecting to Shopify...");
+          window.location.href = "https://aillehealth.myshopify.com";
+        }
       }, 1000);
 
     } catch (err) {
@@ -637,7 +666,11 @@
     const snap = await getDoc(userRef);
 
     if (snap.exists() && snap.data().status === "approved") {
-      window.location.href = "/shop.html";
+      if (user.email === "info@aillehealth.ie") {
+        window.location.href = "/admin.html";
+      } else {
+        window.location.href = "https://aillehealth.myshopify.com";
+      }
     }
   });
 </script>

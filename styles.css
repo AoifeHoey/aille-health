@@ -286,7 +286,7 @@ section {
 .logo-feature {
   width: clamp(260px, 30vw, 340px);
   height: clamp(260px, 30vw, 340px);
-
+  overflow: hidden;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -299,8 +299,10 @@ section {
 }
 
 .logo-feature img {
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
   filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
 }
 
@@ -854,6 +856,28 @@ label {
 /* =========================
    RESPONSIVE
 ========================= */
+@media (max-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-visual {
+    order: -1; /* moves logo above text */
+    margin-bottom: 20px;
+  }
+
+  .hero-copy {
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 640px) {
   .form-modal {
     padding: 24px 18px;
@@ -861,5 +885,13 @@ label {
 
   .form-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    height: 200px;
   }
 }
