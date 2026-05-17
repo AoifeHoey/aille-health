@@ -227,20 +227,28 @@ section {
   margin-top: 30px;
 }
 
-.launch-pill {
-  cursor: default;
-  transition: all 0.25s ease;
-  padding: 13px 20px;
-  border: 1px solid rgba(211, 176, 107, 0.55);
+.hero-shop-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 1.7rem;
+  padding: 0.8rem 1.8rem;
   border-radius: 999px;
-  background: rgba(255, 248, 240, 0.04);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  color: var(--ivory);
-  opacity: 0.9;
+  background: var(--gold);
+  color: var(--bg);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
 }
 
-.launch-pill:hover {
-  background: rgba(255,255,255,0.08);
+.hero-shop-btn:hover {
+  background: var(--ivory);
+  transform: translateY(-2px);
 }
 
 .btn {
@@ -269,9 +277,9 @@ section {
 
 .hero-note {
   max-width: 520px;
-  margin-top: 16px;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  margin-top: 1.1rem;
+  /* font-size: 0.95rem; */
+  line-height: 1.7;
   color: var(--gold);
 }
 
@@ -504,6 +512,76 @@ section {
   display: inline-block;
   min-width: 84px;
   color: var(--ivory);
+}
+
+.enquiry-form {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+  max-width: 460px;
+}
+
+.form-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-row label {
+  color: var(--stone);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(255, 248, 240, 0.14);
+  border-radius: 14px;
+  background: rgba(255, 248, 240, 0.06);
+  color: var(--ivory);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: rgba(244, 239, 232, 0.45);
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  background: rgba(255, 248, 240, 0.09);
+}
+
+.form-row textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-submit {
+  width: fit-content;
+  margin-top: 0.3rem;
+  padding: 0.8rem 1.4rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--bg);
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.form-submit:hover {
+  background: var(--ivory);
+  transform: translateY(-2px);
 }
 
 /* FOOTER */

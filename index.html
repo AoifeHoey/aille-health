@@ -34,24 +34,24 @@
       </header>
       <section class="hero" id="home">
         <div class="hero-copy">
-          <p class="eyebrow">Launching 4th May 2026 • Ireland</p>
+          <p class="eyebrow">Now open for online orders</p>
 
           <h1>Áille Health Clinic</h1>
 
-          <p class="tagline">
+          <!-- <p class="tagline">
             We are pleased to continue supplying practitioners across Ireland.
-          </p>
+          </p> -->
 
           <p class="hero-description">
-          Irish distributor of Traditional Chinese Medicine granules, acupuncture supplies, and clinical products.
+          Supplying qualified practitioners across Ireland with Traditional Chinese Medicine granules, acupuncture supplies and clinical products.
           </p>
 
           <div class="hero-actions">
-            <div class="launch-pill">Launching 4th May 2026</div>
+            <a href="https://aillehealth.myshopify.com" class="hero-shop-btn">Shop Now</a>
           </div>
 
           <p class="hero-note">
-          Orders are currently processed via our enquiry form while our online ordering system is in development.
+          If the item you are looking for is not currently available online, please contact us through our enquiry form below.
           </p>
 
         </div>
@@ -69,10 +69,10 @@
         <p class="section-kicker">Browse our range</p>
         <h2 id="category-heading">Shop by Category</h2>
         <p class="category-note">
-          Online account ordering is coming soon. In the meantime, orders can be placed directly through our enquiry form.
+          Browse our online shop for TCM herbal granules, acupuncture supplies, supplements and clinical products.
         </p>
         <p class="qualification-note">
-          Proof of qualification is required for TCM herbs and acupuncture supplies.
+          Proof of qualification is required for TCM herbs and acupuncture supplies. Please email a copy of your certification to info@aillehealth.ie before place an order.
         </p>
       </div>
 
@@ -104,23 +104,61 @@
     </section>
 
       <section class="info-panel" id="contact">
-      <div class="panel-inner">
-        <div class="panel-left">
-          <p class="panel-label">ÁILLE HEALTH CLINIC</p>
-          <p>
-            Supplying trusted Traditional Chinese Medicine, acupuncture, and physiotherapy products to qualified practitioners across Ireland.
-          </p>
-        </div>
+        <div class="panel-inner">
 
-        <div class="panel-right">
-          <h2>Order Enquiries</h2>
-          <p><strong>Email</strong> <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a></p>
-          <p><strong>Phone</strong> <a href="tel:+353857486575">+353 85 748 6575</a></p>
-          <p><strong>Location</strong> Wexford | Ireland</p>
-          <p>Please include qualification documentation where applicable.</p>   
+          <div class="panel-left">
+            <p class="panel-label">ENQUIRY FORM</p>
+
+            <form 
+              name="order-enquiry" 
+              method="POST" 
+              data-netlify="true" 
+              class="enquiry-form"
+            >
+              <input type="hidden" name="form-name" value="order-enquiry">
+
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-row">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Enquiry</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="4" 
+                  placeholder="Please include the product or order details you are looking for."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="form-submit">
+                Send Enquiry
+              </button>
+            </form>
+          </div>
+
+          <div class="panel-right">
+            <h2>Contact Details</h2>
+            <p><strong>Email</strong> <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a></p>
+            <p><strong>Phone</strong> <a href="tel:+353857486575">+353 85 748 6575</a></p>
+            <p><strong>Location</strong> Wexford | Ireland</p>
+            <p>Please include qualification documentation where applicable.</p>   
+          </div>
+
         </div>
-      </div>
-    </section>
+      </section>
 
     <footer class="site-footer">
       <p>© 2026 Áille Health</p>
