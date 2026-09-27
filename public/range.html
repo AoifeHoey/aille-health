@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our range | Áille Health Clinic</title>
+  <meta name="description" content="Browse over 1,050 TCM herbs, granules, Aura formulas, Mycology Nutrition, acupuncture needles, moxa and clinic supplies from Áille Health Clinic." />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.webp" alt="" /><span>Áille<small>Health Clinic</small></span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/range.html">Our range</a>
+        <a href="/#practitioners">Trade accounts</a>
+        <a href="/#resources">Resources</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <span id="navAccount" class="nav-cta"></span>
+        <button class="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap shop-layout">
+      <aside class="sidebar"><p class="kicker">Categories</p><ul class="cat-list" id="catList"></ul></aside>
+      <section>
+        <div class="notice info" style="margin-bottom:20px">Trade prices and online ordering are available to approved practitioners. <a href="/account.html">Log in</a> or <a href="/account.html#apply">apply for an account</a>.</div>
+        <h1 id="catHeading" style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:14px">All products</h1>
+        <div class="toolbar">
+          <select id="catSelect" class="cat-mobile field" style="padding:11px 14px;border-radius:12px;border:1px solid var(--line);background:#fff"></select>
+          <label class="search"><span class="sr-only">Search products</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="search" type="search" placeholder="Search by name or code, e.g. Huang Qi or NC2525" autocomplete="off" /></label>
+          <span class="result-count" id="resultCount"></span>
+        </div>
+        <div class="prod-list" id="prodList"><div class="empty">Loading products…</div></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Áille Health Clinic · Wexford, Ireland</span>
+      <span><a href="/range.html">Range</a> · <a href="/account.html">Practitioner login</a> · <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a></span>
+    </div>
+  </footer>
+
+  
+  <script type="module">
+    import { mount } from "/js/catalogue-ui.js";
+    const data = await (await fetch("/data/range.json")).json();
+    mount({ data, mode: "public" });
+  </script>
+  <script type="module" src="/js/util.js"></script>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>

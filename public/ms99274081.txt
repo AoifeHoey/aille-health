@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "aillehealth.ie",
+  "Id": "375d8032-b36d-4eb6-96d7-f592c3867313"
+}
