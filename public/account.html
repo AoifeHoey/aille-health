@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practitioner account | Áille Health Clinic</title>
+  <meta name="description" content="Log in or apply for an Áille Health Clinic trade account." />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.webp" alt="" /><span>Áille<small>Health Clinic</small></span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/range.html">Our range</a>
+        <a href="/#practitioners">Trade accounts</a>
+        <a href="/#resources">Resources</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <span id="navAccount" class="nav-cta"></span>
+        <button class="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="panel auth" id="authPanel">
+        <p class="kicker">Practitioner access</p>
+
+        <!-- signed out -->
+        <div id="signedOut" hidden>
+          <div class="tabs" role="tablist">
+            <button id="tabLogin" class="on" type="button">Log in</button>
+            <button id="tabApply" type="button">Apply for access</button>
+          </div>
+
+          <form id="loginForm" class="form">
+            <div class="field"><label for="liEmail">Email</label><input id="liEmail" type="email" required autocomplete="email" /></div>
+            <div class="field"><label for="liPass">Password</label><input id="liPass" type="password" required autocomplete="current-password" /></div>
+            <div id="liMsg" class="notice" hidden></div>
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+              <button class="btn" type="submit">Log in</button>
+              <button class="link-btn" type="button" id="forgot">Forgot password?</button>
+            </div>
+          </form>
+
+          <form id="signupForm" class="form" hidden>
+            <p class="hint">Step 1 of 2 · Create your login. Next you'll add your practice details and certification.</p>
+            <div class="field"><label for="suEmail">Email</label><input id="suEmail" type="email" required autocomplete="email" /></div>
+            <div class="row2">
+              <div class="field"><label for="suPass">Password</label><input id="suPass" type="password" minlength="8" required autocomplete="new-password" /></div>
+              <div class="field"><label for="suPass2">Confirm password</label><input id="suPass2" type="password" minlength="8" required autocomplete="new-password" /></div>
+            </div>
+            <div id="suMsg" class="notice" hidden></div>
+            <div><button class="btn" type="submit">Continue</button></div>
+          </form>
+        </div>
+
+        <!-- signed in, needs to apply -->
+        <form id="applyForm" class="form" hidden>
+          <h2 style="font-size:1.8rem">Your practice details</h2>
+          <p class="hint">Step 2 of 2 · We use this to confirm you're a qualified practitioner.</p>
+          <div class="row2">
+            <div class="field"><label for="apName">Full name</label><input id="apName" name="fullName" required autocomplete="name" /></div>
+            <div class="field"><label for="apPhone">Phone</label><input id="apPhone" name="phone" type="tel" required autocomplete="tel" /></div>
+          </div>
+          <div class="field"><label for="apClinic">Clinic / practice name</label><input id="apClinic" name="clinic" required autocomplete="organization" /></div>
+          <div class="row2">
+            <div class="field"><label for="apQual">Qualification / discipline</label><input id="apQual" name="qualification" required placeholder="e.g. Acupuncture &amp; TCM" /></div>
+            <div class="field"><label for="apBody">Professional body &amp; member no. <span class="hint">(optional)</span></label><input id="apBody" name="memberNo" placeholder="e.g. AFPA 1234" /></div>
+          </div>
+          <div class="field"><label for="apAddr">Delivery address</label><textarea id="apAddr" name="address" required autocomplete="street-address" style="min-height:80px"></textarea></div>
+          <div class="field">
+            <label>Certification</label>
+            <label class="drop" id="drop" for="apFiles">
+              <b>Upload your certificate</b><br /><span class="hint">PDF, JPG or PNG · up to 3 files · 4 MB total</span>
+            </label>
+            <input id="apFiles" type="file" accept=".pdf,image/*" multiple hidden />
+            <ul class="file-list" id="fileList"></ul>
+          </div>
+          <div id="apMsg" class="notice" hidden></div>
+          <div><button class="btn" type="submit" id="apBtn">Submit application</button></div>
+        </form>
+
+        <!-- signed in, status -->
+        <div id="statusView" hidden></div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Áille Health Clinic · Wexford, Ireland</span>
+      <span><a href="/range.html">Range</a> · <a href="/account.html">Practitioner login</a> · <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a></span>
+    </div>
+  </footer>
+  <script type="module" src="/js/account.js"></script>
+  <script type="module" src="/js/util.js"></script>
+</body>
+</html>

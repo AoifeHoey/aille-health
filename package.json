@@ -1,0 +1,12 @@
+{
+  "name": "aille-health-site",
+  "private": true,
+  "type": "module",
+  "description": "Áille Health Clinic website and trade shop (Netlify + Firebase Auth + Stripe)",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "jose": "^5.9.6",
+    "stripe": "^17.4.0"
+  }
+}
