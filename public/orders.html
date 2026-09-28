@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My orders | Áille Health Clinic</title>
+  <meta name="description" content="Log in or apply for an Áille Health Clinic trade account." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/site.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="/"><img src="/img/logo.webp" alt="" /><span>Áille<small>Health Clinic</small></span></a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/range.html">Our range</a>
+        <a href="/#practitioners">Trade accounts</a>
+        <a href="/#resources">Resources</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <span id="navAccount" class="nav-cta"></span>
+        <button class="menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap" style="padding:36px 0 72px;max-width:900px">
+      <p class="kicker">Practitioner account</p>
+      <h1 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:18px">My orders</h1>
+      <div id="myOrders" class="admin-grid"><div class="empty">Loading…</div></div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Áille Health Clinic · Wexford, Ireland · <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a> · <a href="tel:+353857486575">+353 85 748 6575</a></span>
+      <span><a href="/range.html">Our range</a> · <a href="/delivery.html">Delivery &amp; returns</a> · <a href="/terms.html">Terms of sale</a> · <a href="/privacy.html">Privacy &amp; cookies</a> · <a href="/account.html">Practitioner login</a></span>
+    </div>
+  </footer>
+  <script type="module" src="/js/orders.js"></script>
+  <script type="module" src="/js/util.js"></script>
+</body>
+</html>

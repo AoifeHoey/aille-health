@@ -1,4 +1,6 @@
 [build]
+  # Generates the product, range and policy pages, sitemap and robots.txt on every deploy
+  command = "python3 scripts/build_pages.py"
   publish = "public"
   functions = "netlify/functions"
 

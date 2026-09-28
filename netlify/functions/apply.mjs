@@ -26,6 +26,7 @@ export default async (req) => {
     memberNo: clean(form.get("memberNo"), 120),
     address: clean(form.get("address"), 500),
   };
+  if (form.get("agree") !== "yes") return fail("Please tick the box to confirm you agree to the terms.");
   for (const k of ["fullName", "phone", "clinic", "qualification", "address"])
     if (!profile[k]) return fail("Please complete all the required fields.");
 
@@ -50,9 +51,26 @@ export default async (req) => {
     status: "pending",
     files: [...saved, ...(existing?.files || [])].slice(0, 10),
     submittedAt: new Date().toISOString(),
+    agreedTermsAt: new Date().toISOString(),
     createdAt: existing?.createdAt || new Date().toISOString(),
   };
   await practitioners().setJSON(user.uid, record);
+
+  // Email Áille about the new application via Netlify Forms (sent from the server so it can't be blocked by the browser).
+  try {
+    await fetch(new URL("/", req.url), {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        "form-name": "practitioner-application",
+        fullName: profile.fullName, clinic: profile.clinic, email: profile.email,
+        phone: profile.phone, qualification: profile.qualification,
+      }),
+    });
+  } catch (err) {
+    console.error("Could not send application notification", err);
+  }
+
   return json({ ok: true, status: "pending" });
 };
 

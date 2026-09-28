@@ -1,6 +1,16 @@
 import { auth, currentUser, api, esc } from "/js/app.js";
 
 const list = document.getElementById("list");
+
+// Switch between the Orders and Applications sections
+function showSection() {
+  const sec = location.hash === "#applications" ? "applications" : "orders";
+  document.querySelectorAll("#sectionSwitch a").forEach((a) => a.classList.toggle("on", a.dataset.sec === sec));
+  document.getElementById("sec-orders").hidden = sec !== "orders";
+  document.getElementById("sec-applications").hidden = sec !== "applications";
+}
+window.addEventListener("hashchange", showSection);
+showSection();
 let people = [], filter = "pending";
 
 const user = await currentUser();
@@ -33,6 +43,7 @@ function draw() {
     .filter((p) => !q || [p.fullName, p.clinic, p.email].join(" ").toLowerCase().includes(q))
     .sort((a, b) => (b.submittedAt || "").localeCompare(a.submittedAt || ""));
   const counts = people.reduce((m, p) => (m[p.status] = (m[p.status] || 0) + 1, m), {});
+  document.getElementById("appsBadge").textContent = counts.pending || "";
   document.querySelectorAll("#filters button").forEach((b) => {
     const n = b.dataset.f === "all" ? people.length : counts[b.dataset.f] || 0;
     b.textContent = b.dataset.f[0].toUpperCase() + b.dataset.f.slice(1) + ` (${n})`;
@@ -90,10 +101,12 @@ list.addEventListener("click", async (e) => {
   }
   e.target.disabled = true;
   try {
-    const { practitioner } = await api("admin", { method: "POST", body: { uid, action: act, note } });
+    const { practitioner, emailed } = await api("admin", { method: "POST", body: { uid, action: act, note } });
     Object.assign(p, practitioner);
     draw();
-    if (act === "approve") {
+    if (act === "approve" && emailed) {
+      alert(`${p.fullName} is approved and has been emailed.`);
+    } else if (act === "approve") {
       const subject = "Your Áille Health trade account is approved";
       const body = `Hi ${p.fullName.split(" ")[0]},\n\nThank you for registering with Áille Health Clinic. Your trade account has been approved, so you can now log in to see our full pricelist and order online:\n\n${location.origin}/shop.html\n\nIf you have any questions, just reply to this email.\n\nKind regards,\nÁille Health Clinic\n+353 85 748 6575`;
       if (confirm(`${p.fullName} is approved. Open an email to let them know?`))

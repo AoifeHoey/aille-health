@@ -2,13 +2,14 @@
 import { esc, euro } from "/js/util.js";
 
 const PAGE = 60;
+const slugify = (c) => c.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 /**
  * mount({ data, mode: "public" | "shop", cart })
  *   data: { categories:[{id,name,count}], products:[{code,name,pack,cat,img?,price?}] }
  *   cart (shop mode): { get(code), set(code, qty) }
  */
-export function mount({ data, mode, cart }) {
+export function mount({ data, mode, cart, showWeights = false }) {
   const els = {
     side: document.getElementById("catList"),
     select: document.getElementById("catSelect"),
@@ -52,7 +53,7 @@ export function mount({ data, mode, cart }) {
     const thumb = imgs.has(p.code)
       ? `<img src="/img/products/${esc(p.code)}.webp" alt="" loading="lazy" />`
       : esc(p.name.charAt(0));
-    const meta = [p.code, p.pack].filter(Boolean).map(esc).join(" · ");
+    const meta = [p.code, p.pack, showWeights && p.g ? `${p.g} g postage weight` : ""].filter(Boolean).map(esc).join(" · ");
     let buy;
     if (mode === "shop") {
       const q = cart.get(p.code);
@@ -65,7 +66,7 @@ export function mount({ data, mode, cart }) {
       buy = `<div class="buy"><a class="btn ghost small" href="/account.html">Log in for price</a></div>`;
     }
     return `<article class="prod"><div class="thumb">${thumb}</div>
-      <div><div class="name">${esc(p.name)}</div><div class="meta">${meta}</div></div>${buy}</article>`;
+      <div><div class="name"><a href="/products/${slugify(p.code)}.html">${esc(p.name)}</a></div><div class="meta">${meta}</div></div>${buy}</article>`;
   }
 
   function render() {

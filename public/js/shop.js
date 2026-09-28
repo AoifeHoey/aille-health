@@ -20,14 +20,14 @@ if (!user) {
         : `<h2>Complete your application</h2><p class="lead" style="margin:10px auto 20px">Upload your certification so we can approve your trade account.</p><a class="btn" href="/account.html">Continue</a>`);
     } else {
       const data = await api("catalogue");
-      start(data);
+      start(data, me.isAdmin);
     }
   } catch (err) {
     gate(`<div class="notice error">${esc(err.message)}</div>`);
   }
 }
 
-function start(data) {
+function start(data, isAdmin) {
   $("gateWrap").hidden = true;
   $("shopWrap").hidden = false;
   $("cartBtn").hidden = false;
@@ -47,7 +47,7 @@ function start(data) {
     },
   };
 
-  const ui = mount({ data, mode: "shop", cart });
+  const ui = mount({ data, mode: "shop", cart, showWeights: isAdmin });
 
   function drawCart() {
     const lines = Object.entries(items).map(([code, qty]) => ({ p: byCode.get(code), qty }));
@@ -114,4 +114,5 @@ function start(data) {
   };
 
   drawCart();
+  if (location.hash === "#basket") { history.replaceState(null, "", location.pathname); open(true); }
 }

@@ -93,12 +93,6 @@ $("applyForm").onsubmit = async (e) => {
   files.forEach((f) => fd.append("files", f, f.name));
   try {
     await api("apply", { method: "POST", form: fd });
-    // Ping Netlify Forms so Áille gets an email about the new application.
-    const note = new URLSearchParams({
-      "form-name": "practitioner-application", fullName: fd.get("fullName"), clinic: fd.get("clinic"),
-      email: auth.currentUser.email, phone: fd.get("phone"), qualification: fd.get("qualification"),
-    });
-    fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: note }).catch(() => {});
     files = [];
     await refresh(auth.currentUser);
   } catch (err) {
@@ -130,8 +124,8 @@ async function refresh(user) {
     ${p ? `<p style="margin-bottom:10px">Account status: <span class="status-badge ${esc(status)}">${esc(status)}</span></p>` : ""}
     <p class="lead" style="margin-bottom:22px">${copy}</p>
     <div style="display:flex;gap:10px;flex-wrap:wrap">
-      ${status === "approved" || me.isAdmin ? `<a class="btn" href="/shop.html">Go to the shop</a>` : ""}
-      ${me.isAdmin ? `<a class="btn gold" href="/admin.html">Review applications</a>` : ""}
+      ${status === "approved" || me.isAdmin ? `<a class="btn" href="/shop.html">Go to the shop</a> <a class="btn ghost" href="/orders.html">My orders</a>` : ""}
+      ${me.isAdmin ? `<a class="btn gold" href="/admin.html">Orders &amp; applications</a>` : ""}
       ${me.adminNeedsVerification ? `<button class="btn gold" id="verifyBtn">Verify email to unlock admin</button>` : ""}
       ${status === "rejected" ? `<button class="btn ghost" id="reapply">Submit new documents</button>` : ""}
       <button class="btn ghost" id="logoutBtn">Log out</button>

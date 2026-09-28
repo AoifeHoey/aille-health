@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Applications | Áille admin</title>
+  <title>Admin | Áille Health Clinic</title>
   <meta name="description" content="Log in or apply for an Áille Health Clinic trade account." />
   <meta name="robots" content="noindex" />
   <link rel="icon" href="/favicon.png" />
@@ -32,26 +32,48 @@
   <main>
     <div class="wrap" style="padding:36px 0 72px">
       <p class="kicker">Admin</p>
-      <h1 style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:18px">Practitioner applications</h1>
-      <div class="toolbar">
-        <div class="tabs" id="filters" style="margin:0;flex:1;max-width:520px">
-          <button data-f="pending" class="on">Pending</button><button data-f="approved">Approved</button><button data-f="rejected">Rejected</button><button data-f="all">All</button>
-        </div>
-        <label class="search" style="max-width:320px"><span class="sr-only">Search</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="q" type="search" placeholder="Search name, clinic, email" /></label>
+      <div class="section-switch" id="sectionSwitch">
+        <a href="#orders" data-sec="orders">Orders <span class="pill" id="ordersBadge"></span></a>
+        <a href="#applications" data-sec="applications">Applications <span class="pill" id="appsBadge"></span></a>
       </div>
-      <p class="hint" style="margin-bottom:16px">Orders and payments are in your <a href="https://dashboard.stripe.com/payments" target="_blank" rel="noopener">Stripe dashboard</a>.</p>
-      <div id="list" class="admin-grid"><div class="empty">Loading…</div></div>
+
+      <section id="sec-orders">
+        <div class="toolbar">
+          <div class="tabs" id="ofilters" style="margin:0;flex:1;max-width:620px">
+            <button data-f="paid" class="on">To pack</button><button data-f="packed">Packed</button><button data-f="dispatched">Dispatched</button><button data-f="all">All</button>
+          </div>
+          <label class="search" style="max-width:320px"><span class="sr-only">Search orders</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="oq" type="search" placeholder="Order no., clinic, email, product code" /></label>
+        </div>
+        <div id="olist" class="admin-grid"><div class="empty">Loading…</div></div>
+      </section>
+
+      <section id="sec-applications" hidden>
+        <div class="toolbar">
+          <div class="tabs" id="filters" style="margin:0;flex:1;max-width:520px">
+            <button data-f="pending" class="on">Pending</button><button data-f="approved">Approved</button><button data-f="rejected">Rejected</button><button data-f="all">All</button>
+          </div>
+          <label class="search" style="max-width:320px"><span class="sr-only">Search</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="q" type="search" placeholder="Search name, clinic, email" /></label>
+        </div>
+        <div id="list" class="admin-grid"><div class="empty">Loading…</div></div>
+      </section>
+      <p class="hint" style="margin-top:24px">Payments, refunds and payouts are in your <a href="https://dashboard.stripe.com/payments" target="_blank" rel="noopener">Stripe dashboard</a>.</p>
     </div>
   </main>
+
+  <!-- Packing slip, filled in and printed on demand -->
+  <div id="slip" class="slip" hidden></div>
   <footer class="footer">
     <div class="wrap">
-      <span>© 2026 Áille Health Clinic · Wexford, Ireland</span>
-      <span><a href="/range.html">Range</a> · <a href="/account.html">Practitioner login</a> · <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a></span>
+      <span>© 2026 Áille Health Clinic · Wexford, Ireland · <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a> · <a href="tel:+353857486575">+353 85 748 6575</a></span>
+      <span><a href="/range.html">Our range</a> · <a href="/delivery.html">Delivery &amp; returns</a> · <a href="/terms.html">Terms of sale</a> · <a href="/privacy.html">Privacy &amp; cookies</a> · <a href="/account.html">Practitioner login</a></span>
     </div>
   </footer>
   <script type="module" src="/js/admin.js"></script>
+  <script type="module" src="/js/admin-orders.js"></script>
   <script type="module" src="/js/util.js"></script>
 </body>
 </html>
