@@ -1,55 +1,983 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .container {
-            text-align: center;
-            color: white;
-        }
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        button {
-            padding: 12px 30px;
-            font-size: 1em;
-            background-color: white;
-            color: #667eea;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Áille Health Clinic</title>
+  <meta name="description" content="Áille Health Clinic is the Irish distributor of Traditional Chinese Medicine granules, acupuncture supplies, and clinical products. View our 2026 price list and order by email or text."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <div class="container">
-        <h1>Welcome</h1>
-        <p>Your amazing landing page starts here</p>
-        <button>Get Started</button>
-    </div>
+    <main class="page-shell">
+      <header class="navbar">
+        <div class="nav-container">
+          <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#pricelist">Price List</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <a href="Aille_Pricelist_2026.pdf" class="shop-link" download>Price List PDF</a>
+        </div>
+
+      </header>
+      <section class="hero" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">New online shop coming soon</p>
+
+          <h1>Áille Health Clinic</h1>
+
+          <p class="hero-description">
+          Supplying qualified practitioners across Ireland with Traditional Chinese Medicine granules, acupuncture supplies and clinical products.
+          </p>
+
+          <div class="shop-notice" role="status">
+            <p class="shop-notice-title">Our new online shop will be live soon</p>
+            <p>
+              In the meantime, find the product codes in our price list below and send your order with quantities by email to <a href="mailto:info@aillehealth.ie?subject=Order">info@aillehealth.ie</a> (preferred), or by text or <a href="https://wa.me/353857486575">WhatsApp</a> to <a href="tel:+353857486575">+353 85 748 6575</a>.
+            </p>
+            <p class="shop-notice-small">
+              Practitioners: please email a copy of your qualification with your first order of TCM herbs or acupuncture supplies.
+            </p>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#pricelist" class="hero-shop-btn">View Price List</a>
+            <a href="mailto:info@aillehealth.ie?subject=Order" class="hero-shop-btn hero-shop-btn-alt">Email Your Order</a>
+            <a href="https://wa.me/353857486575" class="hero-shop-btn hero-shop-btn-alt">WhatsApp</a>
+          </div>
+
+          <p class="hero-note">
+          If the item you are looking for is not on our price list, please contact us through our enquiry form below and we can order it in.
+          </p>
+
+        </div>
+
+        <div class="hero-visual">
+        <div class="logo-feature">
+          <img src="logo.png" alt="Áille Health Clinic logo" />
+        </div>
+      </div>
+      </section>
+
+      <section class="category-section" id="products" aria-labelledby="category-heading">
+      <div class="category-intro">
+
+        <p class="section-kicker">Browse our range</p>
+        <h2 id="category-heading">Shop by Category</h2>
+        <p class="category-note">
+          TCM herbal granules, acupuncture supplies, supplements and clinical products. Choose a category to see prices.
+        </p>
+        <p class="qualification-note">
+          Proof of qualification is required for TCM herbs and acupuncture supplies. Please email a copy of your qualification to <a href="mailto:info@aillehealth.ie?subject=Qualification">info@aillehealth.ie</a> before or with your first order.
+        </p>
+      </div>
+
+      <div class="category-grid">
+        <a href="#pl-acupuncture" class="category-card">
+          <img src="acupuncture.jpg" alt="Acupuncture supplies" />
+          <span class="category-overlay"></span>
+          <span class="category-label">Acupuncture Supplies</span>
+        </a>
+
+        <a href="#pl-granules" class="category-card">
+          <img src="granules.jpg" alt="TCM granules" />
+          <span class="category-overlay"></span>
+          <span class="category-label">TCM Granules</span>
+        </a>
+
+        <a href="#pl-aura" class="category-card">
+          <img src="aura.jpg" alt="Aura supplements" />
+          <span class="category-overlay"></span>
+          <span class="category-label">Aura Supplements</span>
+        </a>
+
+        <a href="#pl-mycology" class="category-card">
+          <img src="mycology.jpg" alt="Mycology nutrition" />
+          <span class="category-overlay"></span>
+          <span class="category-label">Mycology Nutrition</span>
+        </a>
+      </div>
+    </section>
+
+      <section class="pricelist-section" id="pricelist" aria-labelledby="pricelist-heading">
+        <!-- PRICELIST-HEADER:START · generated by "Pricelist Generator/build.mjs" from the pricelist workbook, do not edit by hand -->
+        <div class="category-intro">
+          <p class="section-kicker">October 2026</p>
+          <h2 id="pricelist-heading">Product Price List</h2>
+          <p class="category-note">
+            All prices are in euro and include VAT at the current rate (granules are VAT-exempt). Prices are per listed unit and may change.
+          </p>
+        </div>
+
+        <div class="pl-steps">
+          <p class="panel-label">HOW TO ORDER</p>
+          <ol>
+            <li><strong>Find the code</strong> for each item on this list.</li>
+            <li><strong>Tell us the quantity.</strong> Items not in stock can be ordered in from our supplier.</li>
+            <li><strong>Send your order by email</strong> to <a href="mailto:info@aillehealth.ie?subject=Order">info@aillehealth.ie</a> (preferred), or by text or WhatsApp to <a href="tel:+353857486575">+353 85 748 6575</a>.</li>
+            <li><strong>Practitioners:</strong> proof of qualification is required for TCM herbs and acupuncture supplies. Please email a copy of your qualification to <a href="mailto:info@aillehealth.ie?subject=Qualification">info@aillehealth.ie</a> with your first order.</li>
+          </ol>
+        </div>
+        <!-- PRICELIST-HEADER:END -->
+
+        <div class="pl-toolbar">
+          <label for="plSearch" class="pl-search-label">Search the price list</label>
+          <input type="search" id="plSearch" class="pl-search" placeholder="Search by name or code" autocomplete="off" />
+          <a href="Aille_Pricelist_2026.pdf" class="pl-download" download>Download PDF</a>
+        </div>
+        <p class="pl-empty" id="plEmpty" hidden>No products match your search. Please contact us and we can check with our supplier.</p>
+
+        <!-- PRICELIST-BODY:START · generated by "Pricelist Generator/build.mjs" from the pricelist workbook, do not edit by hand -->
+        <details class="pl-group" id="pl-acupuncture">
+          <summary><span class="pl-num">01</span> Acupuncture</summary>
+          <div class="pl-body">
+            <h3 class="pl-heading">C-Type acupuncture needles</h3>
+            <p class="pl-intro">Copper coil handle filiform needles. Find your format, then quote the code for the gauge × length you need. In a code like <code>NC2540G5</code>: NC = C-Type, 25 = gauge 0.25 mm, 40 = length 40 mm, G = guide tube, G5 = 5-in-1 guide tube, no letter = no guide tube.</p>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Guide tube <small>100 / box</small></h4><b>€9.34 <small>per box</small></b></div>
+              <ul class="pl-list pl-cols">
+                <li><span>0.18 × 13 mm</span><code>NC1813G</code></li>
+                <li><span>0.18 × 25 mm</span><code>NC1825G</code></li>
+                <li><span>0.20 × 13 mm</span><code>NC2013G</code></li>
+                <li><span>0.20 × 25 mm</span><code>NC2025G</code></li>
+                <li><span>0.20 × 40 mm</span><code>NC2040G</code></li>
+                <li><span>0.22 × 13 mm</span><code>NC2213G</code></li>
+                <li><span>0.22 × 25 mm</span><code>NC2225G</code></li>
+                <li><span>0.22 × 40 mm</span><code>NC2240G</code></li>
+                <li><span>0.25 × 25 mm</span><code>NC2525G</code></li>
+                <li><span>0.25 × 40 mm</span><code>NC2540G</code></li>
+                <li><span>0.25 × 50 mm</span><code>NC2550G</code></li>
+                <li><span>0.30 × 25 mm</span><code>NC3025G</code></li>
+                <li><span>0.30 × 40 mm</span><code>NC3040G</code></li>
+                <li><span>0.30 × 50 mm</span><code>NC3050G</code></li>
+                <li><span>0.30 × 75 mm</span><code>NC3075G</code></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>No guide tube <small>100 / box</small></h4><b>€9.34 <small>per box</small></b></div>
+              <ul class="pl-list pl-cols">
+                <li><span>0.18 × 13 mm</span><code>NC1813</code></li>
+                <li><span>0.20 × 25 mm</span><code>NC2025</code></li>
+                <li><span>0.25 × 25 mm</span><code>NC2525</code></li>
+                <li><span>0.25 × 40 mm</span><code>NC2540</code></li>
+                <li><span>0.30 × 75 mm</span><code>NC3075</code></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>5-in-1 guide tube <small>500 / box</small></h4><b>€39.99 <small>per box</small></b></div>
+              <ul class="pl-list pl-cols">
+                <li><span>0.18 × 13 mm</span><code>NC1813G5</code></li>
+                <li><span>0.18 × 25 mm</span><code>NC1825G5</code></li>
+                <li><span>0.20 × 13 mm</span><code>NC2013G5</code></li>
+                <li><span>0.20 × 25 mm</span><code>NC2025G5</code></li>
+                <li><span>0.22 × 13 mm</span><code>NC2213G5</code></li>
+                <li><span>0.22 × 25 mm</span><code>NC2225G5</code></li>
+                <li><span>0.22 × 40 mm</span><code>NC2240G5</code></li>
+                <li><span>0.25 × 13 mm</span><code>NC2513G5</code></li>
+                <li><span>0.25 × 25 mm</span><code>NC2525G5</code></li>
+                <li><span>0.25 × 40 mm</span><code>NC2540G5</code></li>
+                <li><span>0.30 × 25 mm</span><code>NC3025G5</code></li>
+                <li><span>0.30 × 40 mm</span><code>NC3040G5</code></li>
+                <li><span>0.30 × 50 mm</span><code>NC3050G5</code></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Long · guide tube <small>100 / box</small></h4><b>€12.16 <small>per box</small></b></div>
+              <ul class="pl-list pl-cols">
+                <li><span>0.25 × 125 mm</span><code>NC25125G</code></li>
+                <li><span>0.30 × 100 mm</span><code>NC30100G</code></li>
+                <li><span>0.30 × 125 mm</span><code>NC30125G</code></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Thick · guide tube <small>100 / box</small></h4><b>€13.95 <small>per box</small></b></div>
+              <ul class="pl-list pl-cols">
+                <li><span>0.50 × 30 mm</span><code>NC5030G</code></li>
+                <li><span>0.50 × 40 mm</span><code>NC5040G</code></li>
+              </ul>
+            </div>
+            <p class="pl-footnote">Not every gauge comes in every length, so ask us if you need a size that isn't listed.</p>
+            <h3 class="pl-heading">Specialist needles</h3>
+            <p class="pl-intro">Intradermal and press-tack needles, ear needles and specialist handles.</p>
+            <div class="pl-block">
+              <ul class="pl-list pl-cols">
+                <li><span>Intradermal 0.12 × 4 mm<small>200 / box</small></span><code>NI1204</code><b>€24.19</b></li>
+                <li><span>Intradermal 0.18 × 6 mm<small>200 / box</small></span><code>NI1806</code><b>€24.19</b></li>
+                <li><span>SEIRIN Pyonex press tack · orange<small>0.11 × 0.3 mm · 100 / box</small></span><code>NE011</code><b>€30.66</b></li>
+                <li><span>SEIRIN Pyonex press tack · yellow<small>0.15 × 0.6 mm · 100 / box</small></span><code>NE012</code><b>€30.66</b></li>
+                <li><span>SEIRIN Pyonex press tack · green<small>0.17 × 0.9 mm · 100 / box</small></span><code>NE013</code><b>€30.66</b></li>
+                <li><span>SEIRIN Pyonex press tack · blue<small>0.20 × 1.2 mm · 100 / box</small></span><code>NE014</code><b>€30.66</b></li>
+                <li><span>SEIRIN Pyonex press tack · pink<small>0.20 × 1.5 mm · 100 / box</small></span><code>NE015</code><b>€30.66</b></li>
+                <li><span>Ear press tacks<small>0.22 × 1.5 mm · 100 / box</small></span><code>NE22015</code><b>€13.23</b></li>
+                <li><span>ASP ear needles · steel<small>Single blister · 80 / box</small></span><code>NI-ASP80C</code><b>€60.49</b></li>
+                <li><span>ASP ear needles · gold<small>Single blister · 80 / box</small></span><code>NI-ASP80G</code><b>€97.39</b></li>
+                <li><span>Plastic handle 0.12 × 15 mm<small>100 / box</small></span><code>ND1215</code><b>€13.23</b></li>
+                <li><span>Plastic handle 0.12 × 17 mm<small>100 / box</small></span><code>ND1217</code><b>€13.23</b></li>
+                <li><span>Hand needle 0.18 × 7 mm</span><code>ND1807</code><b>€9.34</b></li>
+                <li><span>Hand needle 0.18 × 8 mm<small>100 / box</small></span><code>ND1808</code><b>€9.34</b></li>
+                <li><span>Detox needle 0.20 × 7 mm<small>500 / box</small></span><code>ND2007</code><b>€47.37</b></li>
+                <li><span>Detox needle 0.22 × 13 mm<small>100 / box</small></span><code>ND2213</code><b>€47.37</b></li>
+                <li><span>Short pipe handle · with guide tube<small>0.20 × 7 mm</small></span><code>NB2007</code><b>€52.82</b></li>
+                <li><span>Short pipe handle · no guide tube<small>0.22 × 7 mm</small></span><code>NB2207</code><b>€52.82</b></li>
+                <li><span>Short pipe handle · no guide tube<small>0.22 × 13 mm</small></span><code>NB2213</code><b>€52.82</b></li>
+                <li><span>Pi Zhen stiletto<small>0.35 × 25 mm</small></span><code>NB3525PG</code><b>€35.88</b></li>
+                <li><span>Pi Zhen stiletto<small>0.35 × 50 mm</small></span><code>NB3550PG</code><b>€35.88</b></li>
+              </ul>
+            </div>
+            <h3 class="pl-heading">Acupuncture supplies</h3>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Ear &amp; point stimulation</h4></div>
+              <ul class="pl-list pl-cols">
+                <li><span>Ear Seeds<small>Seeds on adhesive, for auricular points</small></span><code>NE040</code><b>€9.13</b></li>
+                <li><span>Magnetic Pellets</span><code>NE030</code><b>€11.28</b></li>
+                <li><span>Magrain Ion Pellets · Silver</span><code>NE020</code><b>€20.00</b></li>
+                <li><span>Magrain Ion Pellets · Gold</span><code>NE021</code><b>€23.07</b></li>
+                <li><span>Accu-Band Gold Plated Magnetic Pellets with plaster (800 gauss)<small>Pellets supplied on plasters</small></span><code>NE050</code><b>€13.23</b></li>
+                <li><span>Accu-Band Magnetic Plaster 800 Gauss (24 magnets)</span><code>NE060</code><b>€11.18</b></li>
+                <li><span>Accu-Band High Strength Magnets 6000 Gauss (12 magnets)</span><code>NE070</code><b>€26.16</b></li>
+                <li><span>Accu-Band High Strength Magnets 9000 Gauss (12 magnets)</span><code>NE080</code><b>€28.20</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Dermal hammers &amp; lancets</h4></div>
+              <ul class="pl-list pl-cols">
+                <li><span>7 Star Plum Blossom Dermal Hammer<small>Seven-star plum-blossom hammer</small></span><code>NI0407</code><b>€2.60</b></li>
+                <li><span>Disposable 7 Star Plum Blossom Dermal Hammer Set<small>Disposable set</small></span><code>NI0407M</code><b>€17.10</b></li>
+                <li><span>Lancets (Sterilised)<small>Sterilised, single-use</small></span><code>NI-L28G</code><b>€8.41</b></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="pl-group" id="pl-moxibustion">
+          <summary><span class="pl-num">02</span> Moxibustion &amp; plasters</summary>
+          <div class="pl-body">
+            <p class="pl-intro">Pure and smokeless moxa, kits and accessories from Phoenix Medical. Pure moxa gives the traditional aroma and suits well-ventilated rooms. Smokeless moxa suits shared clinics and rooms with limited ventilation.</p>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Moxa rolls &amp; sticks</h4></div>
+              <ul class="pl-list">
+                <li><span>Maxim Pure Moxa Rolls · 10 pcs<small>A-grade pure mugwort. Long rolls for indirect (hovering) moxa</small></span><code>MM210</code><b>€10.16</b></li>
+                <li><span>Pure Moxa Rolls XL · 3 pcs<small>Extra-large rolls for a longer burn and wider coverage. Refills the Tube Kit</small></span><code>MM216</code><b>€10.25</b></li>
+                <li><span>Maxim Pure Pre-Cut Moxa Rolls · 60 pcs<small>Uniform pre-cut pieces, ready to use</small></span><code>MM211</code><b>€13.52</b></li>
+                <li><span>Maxim Smokeless Moxa Sticks with Hollow Centre · 5 pcs<small>15 × 110 mm</small></span><code>MM213</code><b>€10.16</b></li>
+                <li><span>Maxim Smokeless Moxa Sticks with Hollow Centre · 4 pcs<small>20 × 120 mm</small></span><code>MM214</code><b>€8.40</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Cones</h4></div>
+              <ul class="pl-list">
+                <li><span>Pure Stick-On Moxa Cones · 50 pcs<small>Self-adhesive base for stable placement on the skin</small></span><code>MM219</code><b>€10.71</b></li>
+                <li><span>Smokeless Stick-On Moxa Cones · 50 pcs<small>Low smoke. 7 × 37 mm cone on a 30 × 12 mm adhesive base</small></span><code>MM220</code><b>€12.12</b></li>
+                <li><span>Maxim Smokeless Moxa Cones · 50 pcs<small>Reduced-smoke cones, good for treatment rooms with limited ventilation</small></span><code>MM212</code><b>€6.99</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Loose moxa &amp; incense</h4></div>
+              <ul class="pl-list">
+                <li><span>Premium Quality Chinese Moxa Punk (100g)<small>Finely processed loose moxa for hand-shaping cones</small></span><code>MM221</code><b>€14.83</b></li>
+                <li><span>Moxa Incense Sticks<small>Moxa blended with aromatic incense</small></span><code>MM217</code><b>€4.65</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Moxa kits</h4></div>
+              <ul class="pl-list">
+                <li><span>Golden Moxa Kit<small>5 reusable chimneys, 60 A-grade moxa rolls and 60 adhesive plasters. Adjustable vent</small></span><code>MM218</code><b>€36.35</b></li>
+                <li><span>Pure Moxa Tube Kit<small>Reusable holder, 3 XL pure rolls (30 × 150 mm), ash holder and scraper</small></span><code>MM215</code><b>€45.67</b></li>
+                <li><span>Moxa Belt Kit and Copper Burners<small>Adjustable belt with 3 vented copper burners. Rolls sold separately</small></span><code>MM222</code><b>€27.02</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Accessories</h4></div>
+              <ul class="pl-list">
+                <li><span>Moxibustion Box · Six Holes<small>Wooden box that holds six sticks, with elastic strap</small></span><code>CA247</code><b>€31.30</b></li>
+                <li><span>Moxa Box<small>Box for contained moxa on the body</small></span><code>CA245</code><b>€13.97</b></li>
+                <li><span>Wooden Moxa Pipe for Navel (burlywood)<small>Wooden holder for moxa at the navel</small></span><code>CA246</code><b>€17.70</b></li>
+                <li><span>Moxa Shovel<small>Tool for handling and removing burning moxa</small></span><code>CA244</code><b>€7.74</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Warming &amp; relief patches</h4></div>
+              <ul class="pl-list">
+                <li><span>Phoenix TDP Moxa Warming Stimulator (5 pcs)</span><code>MP010</code><b>€22.37</b></li>
+                <li><span>Ultra Strength Relief Patch</span><code>MP020</code><b>€4.19</b></li>
+                <li><span>Instant Relief Patch</span><code>MP030</code><b>€4.19</b></li>
+              </ul>
+            </div>
+            <p class="pl-footnote">In clinic: never leave burning moxa unattended. Keep an ash tray, snuffer or sand close by, and make sure moxa is fully out after use.</p>
+          </div>
+        </details>
+
+        <details class="pl-group" id="pl-heat">
+          <summary><span class="pl-num">03</span> Heat lamps &amp; kinesiology tape</summary>
+          <div class="pl-body">
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>TDP heat lamps (infrared &amp; far-infrared)</h4></div>
+              <ul class="pl-list">
+                <li><span>TDP Heat Lamp<small>Single-head floor lamp · UK plug (standard in Ireland)</small></span><code>CE010</code><b>€368.15</b></li>
+                <li><span>Dual Head TDP Heat Lamp<small>Two heads for treating two areas at once · UK plug</small></span><code>CE023</code><b>€465.09</b></li>
+                <li><span>Dual Head TDP Heat Lamp<small>Two heads · EU plug</small></span><code>CE024</code><b>€465.09</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Spare parts</h4></div>
+              <ul class="pl-list">
+                <li><span>TDP Heat Lamp Head Unit<small>Replacement head, single lamp</small></span><code>CE012</code><b>€131.59</b></li>
+                <li><span>TDP Heat Lamp Head Unit · dual<small>Replacement head for the dual-head lamp</small></span><code>CE012D</code><b>€131.59</b></li>
+                <li><span>Replacement Heat Lamp Control Arm with Analog Timer<small>Replacement arm with analogue timer</small></span><code>CE014</code><b>€93.21</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Phoenix kinesiology tape <small>5 cm × 5 m roll</small></h4></div>
+              <ul class="pl-list pl-cols">
+                <li><span>Kinesiology tape · Black</span><code>MT30</code><b>€5.55</b></li>
+                <li><span>Kinesiology tape · Beige</span><code>MT31</code><b>€5.55</b></li>
+                <li><span>Kinesiology tape · Pink</span><code>MT32</code><b>€5.55</b></li>
+                <li><span>Kinesiology tape · Blue</span><code>MT33</code><b>€5.55</b></li>
+                <li><span>Kinesiology tape · Tattoo (nylon)</span><code>MT34</code><b>€5.55</b></li>
+                <li><span>Light-reflective tape · Black</span><code>MT35</code><b>€7.42</b></li>
+                <li><span>Light-reflective tape · Pink</span><code>MT36</code><b>€7.42</b></li>
+                <li><span>Tape dispenser case</span><code>MT37</code><b>€2.89</b></li>
+                <li><span>Tape scissors</span><code>MT38</code><b>€22.37</b></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="pl-group" id="pl-hair">
+          <summary><span class="pl-num">04</span> Herbal Hair</summary>
+          <div class="pl-body">
+            <p class="pl-intro">Advanced-formula botanical scalp care in a 4-step routine: shampoo, cleanse tonic, feed tonic, prevention tonic. For internal support, pair it with Aura Qi Bao Mei Ran Dan (WA28).</p>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Scalp care · single bottles</h4></div>
+              <ul class="pl-list">
+                <li><span>Hair Loss Prevention Shampoo · 200 ml<small>Step 1 · Cleanses the scalp of excess oil, buildup and dandruff</small></span><code>MO140</code><b>€9.88</b></li>
+                <li><span>Hair Follicle Cleanse Tonic · 120 ml<small>Step 2 · Clarifies the follicle zone</small></span><code>MO100</code><b>€29.59</b></li>
+                <li><span>Hair Follicle Feed Tonic · 120 ml<small>Step 3 · Botanical nourishment: ginseng, peony, sage, ginger</small></span><code>MO080</code><b>€29.59</b></li>
+                <li><span>Hair Loss Prevention Tonic · 120 ml<small>Step 4 · Lightweight leave-in scalp tonic</small></span><code>MO090</code><b>€29.59</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Tonic treatment packs <small>10 ml × 30 single-use vials</small></h4></div>
+              <ul class="pl-list">
+                <li><span>Hair Follicle Cleanse Tonic</span><code>MO130</code><b>€60.59</b></li>
+                <li><span>Hair Follicle Feed Tonic</span><code>MO110</code><b>€60.59</b></li>
+                <li><span>Hair Loss Prevention Tonic</span><code>MO120</code><b>€60.59</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Clinic multi-packs <small>For clinics that stock and retail Herbal Hair</small></h4></div>
+              <ul class="pl-list pl-cols">
+                <li><span>Hair Loss Prevention Shampoo · 24 × 200 ml</span><code>W/MO140</code><b>€237.12</b></li>
+                <li><span>Hair Follicle Cleanse Tonic · 10 × 120 ml</span><code>W/MO100</code><b>€296.01</b></li>
+                <li><span>Hair Follicle Feed Tonic · 10 × 120 ml</span><code>W/MO080</code><b>€296.01</b></li>
+                <li><span>Hair Loss Prevention Tonic · 10 × 120 ml</span><code>W/MO090</code><b>€296.01</b></li>
+                <li><span>Hair Follicle Cleanse Tonic · 6 × 30 vials</span><code>W/MO130</code><b>€363.50</b></li>
+                <li><span>Hair Follicle Feed Tonic · 6 × 30 vials</span><code>W/MO110</code><b>€363.50</b></li>
+                <li><span>Hair Loss Prevention Tonic · 6 × 30 vials</span><code>W/MO120</code><b>€363.50</b></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Also available</h4></div>
+              <ul class="pl-list">
+                <li><span>Herbal Skin</span><code>MO150</code><b>€12.68</b></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="pl-group" id="pl-aura">
+          <summary><span class="pl-num">05</span> Aura Supplements</summary>
+          <div class="pl-body">
+            <p class="pl-intro">Traditional Chinese herbal formulas in tablet form. 5:1 concentrated extracts, plant-based, vegan and gluten-free. 60 tablets per bottle.</p>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>31 formulas <small>60 tablets</small></h4><b>€15.84 <small>per bottle</small></b></div>
+              <ul class="pl-list pl-cols">
+                <li><span>Ba Zhen Tang</span><code>WA01</code></li>
+                <li><span>Ba Zhen Yi Mu Tang</span><code>WA02</code></li>
+                <li><span>Ban Xia Hou Pu Tang</span><code>WA03</code></li>
+                <li><span>Bi Yan Tang</span><code>WA04</code></li>
+                <li><span>Bu Zhong Yi Qi Tang</span><code>WA05</code></li>
+                <li><span>Chai Hu Shu Gan San</span><code>WA06</code></li>
+                <li><span>Dang Gui Bu Xue Tang</span><code>WA07</code></li>
+                <li><span>Dang Gui Shao Yao San</span><code>WA08</code></li>
+                <li><span>Fu Fang Dan Shen Pian</span><code>WA11</code></li>
+                <li><span>Gui Zhi Fu Ling Wan</span><code>WA15</code></li>
+                <li><span>Gui Zhi Tang</span><code>WA16</code></li>
+                <li><span>Jia Wei Xiao Yao San</span><code>WA18</code></li>
+                <li><span>Jin Gui Shen Qi Wan</span><code>WA20</code></li>
+                <li><span>Jin Suo Gu Jing Pian</span><code>WA21</code></li>
+                <li><span>Liu Wei Di Huang Wan</span><code>WA23</code></li>
+                <li><span>Long Dan Xie Gan Wan</span><code>WA24</code></li>
+                <li><span>Mai Men Dong Tang</span><code>WA25</code></li>
+                <li><span>Mai Wei Di Huang Wan</span><code>WA26</code></li>
+                <li><span>Shao Yao Gan Cao Tang</span><code>WA30</code></li>
+                <li><span>Si Jun Zi Tang</span><code>WA36</code></li>
+                <li><span>Si Ni San</span><code>WA37</code></li>
+                <li><span>Si Wu Tang</span><code>WA38</code></li>
+                <li><span>Tao Hong Si Wu Tang</span><code>WA39</code></li>
+                <li><span>Tong Bian Ling Pian</span><code>WA42</code></li>
+                <li><span>Wu Zi Yan Zong Wan</span><code>WA44</code></li>
+                <li><span>Xiang Sha Liu Jun Zi Tang</span><code>WA45</code></li>
+                <li><span>Xiao Chai Hu Tang</span><code>WA46</code></li>
+                <li><span>Xiao Yao San</span><code>WA47</code></li>
+                <li><span>Yi Zi Tang</span><code>WA49</code></li>
+                <li><span>Yu Ping Feng San</span><code>WA50</code></li>
+                <li><span>Zhi Bai Di Huang Wan</span><code>WA51</code></li>
+              </ul>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>20 formulas <small>60 tablets</small></h4><b>€18.45 <small>per bottle</small></b></div>
+              <ul class="pl-list pl-cols">
+                <li><span>Du Huo Ji Sheng Tang</span><code>WA09</code></li>
+                <li><span>Fang Feng Tong Sheng San</span><code>WA10</code></li>
+                <li><span>Geng Nian An</span><code>WA12</code></li>
+                <li><span>Guan Jie Yan Wan</span><code>WA13</code></li>
+                <li><span>Gui Pi Tang</span><code>WA14</code></li>
+                <li><span>Huo Xiang Zheng Qi San</span><code>WA17</code></li>
+                <li><span>Jie Yu An Shen Pian</span><code>WA19</code></li>
+                <li><span>Li Zhong Wan</span><code>WA22</code></li>
+                <li><span>Nuan Gong Yun Zi Wan</span><code>WA27</code></li>
+                <li><span>Qi Bao Mei Ran Dan</span><code>WA28</code></li>
+                <li><span>Qian Lie Shu Pian</span><code>WA29</code></li>
+                <li><span>Shen Ling Bai Zhu San</span><code>WA31</code></li>
+                <li><span>Shen Tong Zhu Yu Tang</span><code>WA32</code></li>
+                <li><span>Sheng Mai San</span><code>WA33</code></li>
+                <li><span>Shi Du Qing Pian</span><code>WA34</code></li>
+                <li><span>Shi Quan Da Bu Tang</span><code>WA35</code></li>
+                <li><span>Te Xiao An Mian Pian</span><code>WA40</code></li>
+                <li><span>Tian Wang Bu Xin Dan</span><code>WA41</code></li>
+                <li><span>Wen Jing Tang</span><code>WA43</code></li>
+                <li><span>Yao Tong Pian</span><code>WA48</code></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="pl-group" id="pl-mycology">
+          <summary><span class="pl-num">06</span> Mycology Nutrition</summary>
+          <div class="pl-body">
+            <p class="pl-intro">Organic functional mushrooms grown on organic oats in California. Capsules are 450 mg.</p>
+            <div class="pl-block">
+              <div class="pl-table-wrap">
+                <table class="pl-table">
+                  <thead><tr><th scope="col">Mushroom</th><th scope="col">90 capsules</th><th scope="col">Powder 60 g</th><th scope="col">Powder 120 g</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">Agaricus<small>Ji Song Rong</small></th><td data-label="90 capsules"><b>€32.62</b><code>WM010</code></td><td data-label="Powder 60 g"><b>€33.54</b><code>WM211</code></td><td data-label="Powder 120 g"><b>€60.59</b><code>WM210</code></td></tr>
+                    <tr><th scope="row">Antrodia<small>Niu Zhang Zhi</small></th><td data-label="90 capsules"><b>€34.49</b><code>WM100</code></td><td data-label="Powder 60 g"><b>€34.49</b><code>WM301</code></td><td data-label="Powder 120 g"><b>€55.18</b><code>WM300</code></td></tr>
+                    <tr><th scope="row">Chaga</th><td data-label="90 capsules"><b>€28.89</b><code>WM020</code></td><td data-label="Powder 60 g"><b>€28.89</b><code>WM221</code></td><td data-label="Powder 120 g"><b>€51.27</b><code>WM220</code></td></tr>
+                    <tr><th scope="row">Cordyceps</th><td data-label="90 capsules"><b>€32.62</b><code>WM030</code></td><td data-label="Powder 60 g"><b>€33.54</b><code>WM231</code></td><td data-label="Powder 120 g"><b>€60.59</b><code>WM230</code></td></tr>
+                    <tr><th scope="row">Coriolus<small>Turkey Tail · Yun Zhi</small></th><td data-label="90 capsules"><b>€28.89</b><code>WM040</code></td><td data-label="Powder 60 g"><b>€28.89</b><code>WM241</code></td><td data-label="Powder 120 g"><b>€51.27</b><code>WM240</code></td></tr>
+                    <tr><th scope="row">Hericium<small>Lion's Mane</small></th><td data-label="90 capsules"><b>€28.89</b><code>WM050</code></td><td data-label="Powder 60 g"><b>€28.89</b><code>WM251</code></td><td data-label="Powder 120 g"><b>€51.27</b><code>WM250</code></td></tr>
+                    <tr><th scope="row">Maitake<small>Hen of the Woods</small></th><td data-label="90 capsules"><b>€28.89</b><code>WM060</code></td><td data-label="Powder 60 g"><b>€28.89</b><code>WM261</code></td><td data-label="Powder 120 g"><b>€51.27</b><code>WM260</code></td></tr>
+                    <tr><th scope="row">Pleurotus<small>Oyster</small></th><td data-label="90 capsules"><b>€28.89</b><code>WM070</code></td><td data-label="Powder 60 g"><b>€28.89</b><code>WM271</code></td><td data-label="Powder 120 g"><b>€51.27</b><code>WM270</code></td></tr>
+                    <tr><th scope="row">Reishi<small>Ling Zhi</small></th><td data-label="90 capsules"><b>€28.89</b><code>WM080</code></td><td data-label="Powder 60 g"><b>€28.89</b><code>WM281</code></td><td data-label="Powder 120 g"><b>€51.27</b><code>WM280</code></td></tr>
+                    <tr><th scope="row">Shiitake<small>Dong Gu</small></th><td data-label="90 capsules"><b>€28.89</b><code>WM090</code></td><td data-label="Powder 60 g"><b>€28.89</b><code>WM291</code></td><td data-label="Powder 120 g"><b>€51.27</b><code>WM290</code></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="pl-block">
+              <div class="pl-block-head"><h4>Mushroom coffee <small>60 g · 15 servings · contains caffeine</small></h4></div>
+              <ul class="pl-list">
+                <li><span>Endurance Coffee<small>Cordyceps &amp; Siberian ginseng</small></span><code>WM610</code><b>€22.37</b></li>
+                <li><span>Focus Coffee<small>Lion's Mane &amp; organic turmeric</small></span><code>WM620</code><b>€22.37</b></li>
+                <li><span>Immunity Coffee<small>Chaga &amp; astragalus root</small></span><code>WM630</code><b>€22.37</b></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <details class="pl-group" id="pl-granules">
+          <summary><span class="pl-num">07</span> Concentrated granules</summary>
+          <div class="pl-body">
+            <p class="pl-intro">Single-herb concentrated granules for dispensing. Every product is a 100 g pack. 314 herbs. <strong>VAT-exempt:</strong> the price shown is the full price you pay.</p>
+            <div class="pl-block">
+              <ul class="pl-list pl-cols pl-cols-3">
+                <li><span>Ai Ye</span><code>HSA010</code><b>€12.17</b></li>
+                <li><span>Ba Ji Tian</span><code>HSB010</code><b>€24.35</b></li>
+                <li><span>Bai Bian Dou (Chao)</span><code>HSB020</code><b>€12.92</b></li>
+                <li><span>Bai Bu (Mi Zhi)</span><code>HSB030</code><b>€12.49</b></li>
+                <li><span>Bai Dou Kou</span><code>HSB040</code><b>€32.70</b></li>
+                <li><span>Bai Fu Zi (Zhi)</span><code>HSB045</code><b>€19.49</b></li>
+                <li><span>Bai Guo</span><code>HSB046</code><b>€16.19</b></li>
+                <li><span>Bai He</span><code>HSB050</code><b>€21.20</b></li>
+                <li><span>Bai Hua She She Cao</span><code>HSB060</code><b>€20.14</b></li>
+                <li><span>Bai Ji Li (Chao)</span><code>HSB070</code><b>€12.92</b></li>
+                <li><span>Bai Jiang Cao</span><code>HSB080</code><b>€12.64</b></li>
+                <li><span>Bai Jie Zi (Chao)</span><code>HSB090</code><b>€14.07</b></li>
+                <li><span>Bai Lian</span><code>HSB095</code><b>€25.44</b></li>
+                <li><span>Bai Mao Gen</span><code>HSB100</code><b>€13.64</b></li>
+                <li><span>Bai Qian</span><code>HSB105</code><b>€33.15</b></li>
+                <li><span>Bai Shao</span><code>HSB110</code><b>€15.69</b></li>
+                <li><span>Bai Shao (Chao)</span><code>HSB120</code><b>€16.54</b></li>
+                <li><span>Bai Tou Weng</span><code>HSB124</code><b>€13.68</b></li>
+                <li><span>Bai Wei</span><code>HSB125</code><b>€16.43</b></li>
+                <li><span>Bai Xian Pi</span><code>HSB130</code><b>€22.80</b></li>
+                <li><span>Bai Zhi</span><code>HSB140</code><b>€14.90</b></li>
+                <li><span>Bai Zhu</span><code>HSB150</code><b>€21.88</b></li>
+                <li><span>Bai Zhu (Fu Chao)</span><code>HSB160</code><b>€25.39</b></li>
+                <li><span>Bai Zi Ren</span><code>HSB170</code><b>€17.19</b></li>
+                <li><span>Ban Bian Lian</span><code>HSB175</code><b>€14.63</b></li>
+                <li><span>Ban Lan Gen</span><code>HSB180</code><b>€14.79</b></li>
+                <li><span>Ban Zhi Lian</span><code>HSB185</code><b>€15.73</b></li>
+                <li><span>Ban Xia (Fa)</span><code>HSB190</code><b>€34.14</b></li>
+                <li><span>Ban Xia (Jiang)</span><code>HSB191</code><b>€34.27</b></li>
+                <li><span>Bei Sha Shen</span><code>HSB200</code><b>€20.20</b></li>
+                <li><span>Bi Xie (Fen)</span><code>HSB210</code><b>€13.77</b></li>
+                <li><span>Bian Xu</span><code>HSB220</code><b>€11.43</b></li>
+                <li><span>Bo He</span><code>HSB230</code><b>€13.64</b></li>
+                <li><span>Bu Gu Zhi (Yan Zhi)</span><code>HSB240</code><b>€13.68</b></li>
+                <li><span>Cang Er Zi (Chao)</span><code>HSC010</code><b>€13.68</b></li>
+                <li><span>Cang Zhu (Fu Chao)</span><code>HSC020</code><b>€14.79</b></li>
+                <li><span>Cao Dou Kou</span><code>HSC025</code><b>€31.29</b></li>
+                <li><span>Cao Guo</span><code>HSC026</code><b>€66.12</b></li>
+                <li><span>Ce Bai Ye</span><code>HSC030</code><b>€14.99</b></li>
+                <li><span>Ce Bai Tan</span><code>HSC031</code><b>€16.64</b></li>
+                <li><span>Chai Hu</span><code>HSC040</code><b>€23.83</b></li>
+                <li><span>Chai Hu (Cu)</span><code>HSC041</code><b>€28.61</b></li>
+                <li><span>Che Qian Cao</span><code>HSC050</code><b>€11.26</b></li>
+                <li><span>Che Qian Zi (Yan Zhi)</span><code>HSC060</code><b>€14.63</b></li>
+                <li><span>Chen Pi</span><code>HSC070</code><b>€12.43</b></li>
+                <li><span>Chi Shao (Chao)</span><code>HSC080</code><b>€15.51</b></li>
+                <li><span>Chi Shao</span><code>HSC081</code><b>€15.51</b></li>
+                <li><span>Chi Xiao Dou</span><code>HSC090</code><b>€16.34</b></li>
+                <li><span>Chong Lou / Zao Xiu</span><code>HSC100</code><b>€23.49</b></li>
+                <li><span>Chong Wei Zi</span><code>HSC105</code><b>€14.94</b></li>
+                <li><span>Chuan Bei Mu</span><code>HSC110</code><b>€82.07</b></li>
+                <li><span>Chuan Lian Zi (Chao)</span><code>HSC121</code><b>€14.94</b></li>
+                <li><span>Chuan Niu Xi</span><code>HSC130</code><b>€15.46</b></li>
+                <li><span>Chuan Xin Lian</span><code>HSC135</code><b>€14.53</b></li>
+                <li><span>Chuan Xiong</span><code>HSC140</code><b>€13.18</b></li>
+                <li><span>Ci Wu Jia</span><code>HSC160</code><b>€17.55</b></li>
+                <li><span>Da Xue Teng (Hong Teng)</span><code>HSD005</code><b>€13.62</b></li>
+                <li><span>Da Huang</span><code>HSD009</code><b>€14.90</b></li>
+                <li><span>Da Huang (shu)</span><code>HSD010</code><b>€18.14</b></li>
+                <li><span>Da Ji</span><code>HSD015</code><b>€13.09</b></li>
+                <li><span>Da Qing Ye</span><code>HSD020</code><b>€11.13</b></li>
+                <li><span>Da Zao</span><code>HSD030</code><b>€12.43</b></li>
+                <li><span>Dan Dou Chi</span><code>HSD040</code><b>€11.13</b></li>
+                <li><span>Dan Shen</span><code>HSD050</code><b>€16.15</b></li>
+                <li><span>Dan Zhu Ye</span><code>HSD060</code><b>€12.64</b></li>
+                <li><span>Dang Gui</span><code>HSD070</code><b>€25.68</b></li>
+                <li><span>Dang Gui (Jiu Zhi)</span><code>HSD080</code><b>€29.20</b></li>
+                <li><span>Dang Gui Wei</span><code>HSD090</code><b>€18.67</b></li>
+                <li><span>Dang Shen</span><code>HSD100</code><b>€22.33</b></li>
+                <li><span>Dang Shen (Chao)</span><code>HSD110</code><b>€22.80</b></li>
+                <li><span>Deng Xin Cao</span><code>HSD120</code><b>€49.15</b></li>
+                <li><span>Di Fu Zi</span><code>HSD130</code><b>€12.01</b></li>
+                <li><span>Di Gu Pi</span><code>HSD140</code><b>€19.36</b></li>
+                <li><span>Di Yu</span><code>HSD150</code><b>€14.70</b></li>
+                <li><span>Di Yu (Tan)</span><code>HSD160</code><b>€12.09</b></li>
+                <li><span>Ding Xiang (Gong)</span><code>HSD170</code><b>€35.95</b></li>
+                <li><span>Dong Chong Xia Cao</span><code>HSD175</code><b>€56.99</b></li>
+                <li><span>Dong Gua Pi</span><code>HSD180</code><b>€24.66</b></li>
+                <li><span>Dong Gua Zi</span><code>HSD190</code><b>€16.60</b></li>
+                <li><span>Du Huo</span><code>HSD200</code><b>€13.52</b></li>
+                <li><span>Du Zhong (Yan)</span><code>HSD210</code><b>€39.83</b></li>
+                <li><span>Du Zhong</span><code>HSD211</code><b>€38.51</b></li>
+                <li><span>E Zhu (Cu Zhi)</span><code>HSE010</code><b>€12.01</b></li>
+                <li><span>Fan Xie Ye</span><code>HSF005</code><b>€29.32</b></li>
+                <li><span>Fang Feng</span><code>HSF010</code><b>€28.07</b></li>
+                <li><span>Fo Shou</span><code>HSF020</code><b>€29.20</b></li>
+                <li><span>Fu Ling</span><code>HSF030</code><b>€13.88</b></li>
+                <li><span>Fu Ling Pi</span><code>HSF031</code><b>€18.14</b></li>
+                <li><span>Fu Pen Zi</span><code>HSF040</code><b>€19.71</b></li>
+                <li><span>Fu Ping</span><code>HSF045</code><b>€14.65</b></li>
+                <li><span>Fu Shen</span><code>HSF050</code><b>€21.20</b></li>
+                <li><span>Fu Xiao Mai</span><code>HSF060</code><b>€12.71</b></li>
+                <li><span>Gan Cao</span><code>HSG010</code><b>€17.26</b></li>
+                <li><span>Gan Cao (Mi Zhi)</span><code>HSG020</code><b>€17.59</b></li>
+                <li><span>Gan Jiang</span><code>HSG030</code><b>€17.54</b></li>
+                <li><span>Gao Ben</span><code>HSG040</code><b>€17.07</b></li>
+                <li><span>Gao Liang Jiang</span><code>HSG045</code><b>€15.87</b></li>
+                <li><span>Ge Gen (Ye)</span><code>HSG050</code><b>€18.40</b></li>
+                <li><span>Gou Qi Zi</span><code>HSG060</code><b>€15.90</b></li>
+                <li><span>Gou Teng</span><code>HSG070</code><b>€14.65</b></li>
+                <li><span>Gu Jing Cao</span><code>HSG080</code><b>€34.94</b></li>
+                <li><span>Gu Ya (Chao)</span><code>HSG085</code><b>€11.44</b></li>
+                <li><span>Gu Sui Bu</span><code>HSG090</code><b>€21.20</b></li>
+                <li><span>Gua Lou Shi (Quan)</span><code>HSG100</code><b>€18.90</b></li>
+                <li><span>Gua Lou Pi</span><code>HSG110</code><b>€15.47</b></li>
+                <li><span>Gua Lou Zi</span><code>HSG120</code><b>€14.90</b></li>
+                <li><span>Guan Zhong</span><code>HSG130</code><b>€21.79</b></li>
+                <li><span>Gui Zhi</span><code>HSG140</code><b>€12.09</b></li>
+                <li><span>Hai Feng Teng</span><code>HSH005</code><b>€23.87</b></li>
+                <li><span>Hai Jin Sha</span><code>HSH006</code><b>€31.55</b></li>
+                <li><span>Hai Tong Pi</span><code>HSH010</code><b>€18.21</b></li>
+                <li><span>Hai Zao</span><code>HSH020</code><b>€12.43</b></li>
+                <li><span>Han Lian Cao (Mo)</span><code>HSH030</code><b>€12.01</b></li>
+                <li><span>He Huan Hua</span><code>HSH040</code><b>€17.39</b></li>
+                <li><span>He Huan Pi</span><code>HSH050</code><b>€13.64</b></li>
+                <li><span>He Shou Wu (Zhi)</span><code>HSH060</code><b>€17.07</b></li>
+                <li><span>He Ye</span><code>HSH070</code><b>€16.82</b></li>
+                <li><span>Hei Zhi Ma</span><code>HSH080</code><b>€26.13</b></li>
+                <li><span>Hong Hua</span><code>HSH090</code><b>€33.12</b></li>
+                <li><span>Hong Jing Tian</span><code>HSH100</code><b>€22.80</b></li>
+                <li><span>Hong Shen</span><code>HSH110</code><b>€84.90</b></li>
+                <li><span>Hou Pu / Hou Po (Jiang Zhi)</span><code>HSH121</code><b>€20.57</b></li>
+                <li><span>Hu Po</span><code>HSH130</code><b>€42.98</b></li>
+                <li><span>Hu Zhang</span><code>HSH140</code><b>€16.16</b></li>
+                <li><span>Hua Jiao</span><code>HSH150</code><b>€19.02</b></li>
+                <li><span>Huai Hua (Chao)</span><code>HSH160</code><b>€17.85</b></li>
+                <li><span>Huai Niu Xi</span><code>HSH180</code><b>€13.18</b></li>
+                <li><span>Huang Bai (Huang Bo)</span><code>HSH190</code><b>€14.78</b></li>
+                <li><span>Huang Jing (Jiu Zhi)</span><code>HSH200</code><b>€13.73</b></li>
+                <li><span>Huang Lian</span><code>HSH210</code><b>€42.28</b></li>
+                <li><span>Hu Huang Lian</span><code>HSH211</code><b>€77.06</b></li>
+                <li><span>Huang Qi</span><code>HSH220</code><b>€18.73</b></li>
+                <li><span>Huang Qi (Mi Zhi)</span><code>HSH230</code><b>€20.14</b></li>
+                <li><span>Huang Qin</span><code>HSH240</code><b>€17.07</b></li>
+                <li><span>Huang Qin (Jiu Zhi)</span><code>HSH250</code><b>€18.56</b></li>
+                <li><span>Huo Ma Ren</span><code>HSH260</code><b>€22.33</b></li>
+                <li><span>Huo Xiang</span><code>HSH270</code><b>€18.38</b></li>
+                <li><span>Ji Xue Teng</span><code>HSJ010</code><b>€13.33</b></li>
+                <li><span>Jiang Huang</span><code>HSJ020</code><b>€18.03</b></li>
+                <li><span>Jiao Gu Lan</span><code>HSJ030</code><b>€21.20</b></li>
+                <li><span>Jie Geng</span><code>HSJ040</code><b>€22.80</b></li>
+                <li><span>Jin Qian Cao (Guang)</span><code>HSJ050</code><b>€16.78</b></li>
+                <li><span>Jin Yin Hua</span><code>HSJ060</code><b>€69.15</b></li>
+                <li><span>Jin Ying Zi</span><code>HSJ070</code><b>€11.35</b></li>
+                <li><span>Jing Jie Sui</span><code>HSJ080</code><b>€18.38</b></li>
+                <li><span>Jing Jie (Tan)</span><code>HSJ081</code><b>€19.68</b></li>
+                <li><span>Jiu Cai Zi</span><code>HSJ083</code><b>€26.69</b></li>
+                <li><span>Ji Xue Cao</span><code>HSJ085</code><b>€14.78</b></li>
+                <li><span>Ju He (Yan)</span><code>HSJ090</code><b>€12.92</b></li>
+                <li><span>Ju Hong</span><code>HSJ100</code><b>€18.90</b></li>
+                <li><span>Ju Hua</span><code>HSJ110</code><b>€25.10</b></li>
+                <li><span>Ju Luo</span><code>HSJ111</code><b>€58.68</b></li>
+                <li><span>Jue Ming Zi (Chao)</span><code>HSJ121</code><b>€15.38</b></li>
+                <li><span>Ku Shen</span><code>HSK010</code><b>€12.43</b></li>
+                <li><span>Kuan Dong Hua (Mi Zhi)<small>External use only</small></span><code>HSK020</code><b>€32.89</b></li>
+                <li><span>Kun Bu</span><code>HSK030</code><b>€12.92</b></li>
+                <li><span>Lai Fu Zi (Chao)</span><code>HSL010</code><b>€12.43</b></li>
+                <li><span>Lian Qiao</span><code>HSL020</code><b>€14.44</b></li>
+                <li><span>Lian Xu</span><code>HSL025</code><b>€73.36</b></li>
+                <li><span>Lian Zi</span><code>HSL030</code><b>€18.90</b></li>
+                <li><span>Lian Zi Xin</span><code>HSL040</code><b>€18.90</b></li>
+                <li><span>Ling Zhi</span><code>HSL050</code><b>€53.40</b></li>
+                <li><span>Liu Ji Nu</span><code>HSL055</code><b>€13.18</b></li>
+                <li><span>Long Dan Cao</span><code>HSL060</code><b>€24.35</b></li>
+                <li><span>Long Yan Rou</span><code>HSL080</code><b>€38.87</b></li>
+                <li><span>Lou Lu</span><code>HSL085</code><b>€18.67</b></li>
+                <li><span>Lu Gen</span><code>HSL090</code><b>€16.81</b></li>
+                <li><span>Lu Lu Tong</span><code>HSL100</code><b>€11.38</b></li>
+                <li><span>Luo Shi Teng</span><code>HSL110</code><b>€12.09</b></li>
+                <li><span>Ma Bian Cao</span><code>HSM005</code><b>€21.88</b></li>
+                <li><span>Ma Chi Xian</span><code>HSM010</code><b>€12.92</b></li>
+                <li><span>Mai Men Dong</span><code>HSM020</code><b>€22.49</b></li>
+                <li><span>Mai Ya</span><code>HSM029</code><b>€12.49</b></li>
+                <li><span>Mai Ya (Chao)</span><code>HSM030</code><b>€13.40</b></li>
+                <li><span>Man Jing Zi</span><code>HSM040</code><b>€14.17</b></li>
+                <li><span>Man Jing Zi (Chao)</span><code>HSM045</code><b>€30.06</b></li>
+                <li><span>Mei Gui Hua</span><code>HSM050</code><b>€29.20</b></li>
+                <li><span>Mi Meng Hua</span><code>HSM055</code><b>€32.64</b></li>
+                <li><span>Mo Yao (Cu Zhi)</span><code>HSM060</code><b>€21.11</b></li>
+                <li><span>Mu Hu Die</span><code>HSM063</code><b>€12.43</b></li>
+                <li><span>Mu Zei</span><code>HSM065</code><b>€16.02</b></li>
+                <li><span>Mu Dan Pi</span><code>HSM070</code><b>€17.85</b></li>
+                <li><span>Mu Gua</span><code>HSM080</code><b>€15.35</b></li>
+                <li><span>Mu Xiang (Chuan)</span><code>HSM100</code><b>€11.34</b></li>
+                <li><span>Nan Sha Shen</span><code>HSN010</code><b>€17.19</b></li>
+                <li><span>Niu Bang Zi (Chao)</span><code>HSN020</code><b>€19.45</b></li>
+                <li><span>Nu Zhen Zi (Jiu)</span><code>HSN030</code><b>€14.33</b></li>
+                <li><span>Ou Jie (Tan)</span><code>HSO010</code><b>€19.72</b></li>
+                <li><span>Pang Da Hai</span><code>HSP003</code><b>€24.49</b></li>
+                <li><span>Pao Jiang (Tan)</span><code>HSP005</code><b>€15.34</b></li>
+                <li><span>Pian Jiang Huang</span><code>HSP006</code><b>€16.69</b></li>
+                <li><span>Pei Lan<small>External</small></span><code>HSP007</code><b>€16.64</b></li>
+                <li><span>Pi Pa Ye (Mi Zhi)</span><code>HSP010</code><b>€12.40</b></li>
+                <li><span>Pu Gong Ying</span><code>HSP020</code><b>€13.09</b></li>
+                <li><span>Pu Huang</span><code>HSP030</code><b>€18.40</b></li>
+                <li><span>Pu Huang (Tan)</span><code>HSP031</code><b>€21.93</b></li>
+                <li><span>Qian Cao Gen</span><code>HSQ010</code><b>€17.52</b></li>
+                <li><span>Qian Hu</span><code>HSQ020</code><b>€19.36</b></li>
+                <li><span>Qian Nian Jian</span><code>HSQ025</code><b>€15.18</b></li>
+                <li><span>Qian Shi</span><code>HSQ030</code><b>€16.60</b></li>
+                <li><span>Qiang Huo</span><code>HSQ040</code><b>€29.68</b></li>
+                <li><span>Qin Jiao</span><code>HSQ050</code><b>€30.37</b></li>
+                <li><span>Qin Pi</span><code>HSQ060</code><b>€10.88</b></li>
+                <li><span>Qing Dai</span><code>HSQ070</code><b>€28.07</b></li>
+                <li><span>Qing Hao</span><code>HSQ080</code><b>€11.38</b></li>
+                <li><span>Qing Pi (Cu)</span><code>HSQ090</code><b>€12.69</b></li>
+                <li><span>Qing Xiang Zi</span><code>HSQ100</code><b>€15.94</b></li>
+                <li><span>Qu Mai</span><code>HSQ110</code><b>€11.60</b></li>
+                <li><span>Ren Dong Teng</span><code>HSR010</code><b>€11.80</b></li>
+                <li><span>Ren Shen</span><code>HSR020</code><b>€77.47</b></li>
+                <li><span>Rou Dou Kou</span><code>HSR040</code><b>€50.34</b></li>
+                <li><span>Rou Gui</span><code>HSR050</code><b>€22.89</b></li>
+                <li><span>Ru Xiang (Cu Zhi)</span><code>HSR060</code><b>€20.20</b></li>
+                <li><span>San Leng (Cu Zhi)</span><code>HSS010</code><b>€12.60</b></li>
+                <li><span>San Qi</span><code>HSS020</code><b>€82.50</b></li>
+                <li><span>Sang Bai Pi (Mi Zhi)</span><code>HSS030</code><b>€15.05</b></li>
+                <li><span>Sang Ji Sheng</span><code>HSS040</code><b>€12.87</b></li>
+                <li><span>Sang Shen</span><code>HSS050</code><b>€13.18</b></li>
+                <li><span>Sang Ye</span><code>HSS060</code><b>€12.87</b></li>
+                <li><span>Sang Zhi</span><code>HSS070</code><b>€12.87</b></li>
+                <li><span>Sha Ren</span><code>HSS080</code><b>€29.84</b></li>
+                <li><span>Sha Yuan Zi</span><code>HSS090</code><b>€16.15</b></li>
+                <li><span>Shan Dou Gen</span><code>HSS095</code><b>€14.70</b></li>
+                <li><span>Shan Yao</span><code>HSS100</code><b>€23.80</b></li>
+                <li><span>Shan Ci Gu</span><code>HSS105</code><b>€84.40</b></li>
+                <li><span>Shan Yu Rou / Shan Zhu Yu (Jiu Zhi)</span><code>HSS110</code><b>€25.21</b></li>
+                <li><span>Shan Zha</span><code>HSS120</code><b>€12.49</b></li>
+                <li><span>Shan Zha (Jiao)</span><code>HSS130</code><b>€13.18</b></li>
+                <li><span>She Chuang Zi</span><code>HSS140</code><b>€14.07</b></li>
+                <li><span>She Gan</span><code>HSS145</code><b>€31.64</b></li>
+                <li><span>Shen Jin Cao</span><code>HSS150</code><b>€11.34</b></li>
+                <li><span>Shen Qu (Jiao)</span><code>HSS160</code><b>€17.65</b></li>
+                <li><span>Sheng Di Huang</span><code>HSS170</code><b>€13.64</b></li>
+                <li><span>Sheng Jiang</span><code>HSS180</code><b>€13.14</b></li>
+                <li><span>Sheng Ma</span><code>HSS190</code><b>€22.49</b></li>
+                <li><span>Shi Chang Pu</span><code>HSS200</code><b>€15.94</b></li>
+                <li><span>Shi Jian Chuan</span><code>HSS210</code><b>€16.26</b></li>
+                <li><span>Shi Wei</span><code>HSS220</code><b>€13.09</b></li>
+                <li><span>Shou Wu Teng (Ye Jiao Teng)</span><code>HSS230</code><b>€13.68</b></li>
+                <li><span>Shu Di Huang</span><code>HSS240</code><b>€14.51</b></li>
+                <li><span>Si Gua Luo</span><code>HSS250</code><b>€17.07</b></li>
+                <li><span>Su Mu</span><code>HSS260</code><b>€14.89</b></li>
+                <li><span>Suan Zao Ren (Chao)</span><code>HSS270</code><b>€47.62</b></li>
+                <li><span>Suo Yang</span><code>HSS280</code><b>€11.69</b></li>
+                <li><span>Tai Zi Shen</span><code>HST010</code><b>€97.63</b></li>
+                <li><span>Tao Ren (Dan)</span><code>HST020</code><b>€23.49</b></li>
+                <li><span>Tian Dong (Tian Men Dong)</span><code>HST030</code><b>€16.00</b></li>
+                <li><span>Tian Hua Fen</span><code>HST040</code><b>€18.14</b></li>
+                <li><span>Tian Ma (CITES)</span><code>HST050</code><b>€98.71</b></li>
+                <li><span>Tian Nan Xing (Zhi)</span><code>HST060</code><b>€18.17</b></li>
+                <li><span>Ting Li Zi</span><code>HST065</code><b>€11.73</b></li>
+                <li><span>Tong Cao</span><code>HST070</code><b>€45.24</b></li>
+                <li><span>Tou Gu Cao</span><code>HST080</code><b>€13.64</b></li>
+                <li><span>Tu Fu Ling</span><code>HST090</code><b>€15.47</b></li>
+                <li><span>Tu Jing Pi</span><code>HST100</code><b>€10.88</b></li>
+                <li><span>Tu Si Zi</span><code>HST110</code><b>€14.33</b></li>
+                <li><span>Wang Bu Liu Xing (Chao)</span><code>HSW011</code><b>€14.78</b></li>
+                <li><span>Wei Ling Xian</span><code>HSW020</code><b>€20.03</b></li>
+                <li><span>Wu Wei Zi (Cu)</span><code>HSW031</code><b>€26.64</b></li>
+                <li><span>Wu Jia Pi</span><code>HSW040</code><b>€14.63</b></li>
+                <li><span>Wu Mei</span><code>HSW050</code><b>€14.70</b></li>
+                <li><span>Wu Yao</span><code>HSW060</code><b>€17.77</b></li>
+                <li><span>Wu Zhu Yu (Zhi)</span><code>HSW070</code><b>€82.59</b></li>
+                <li><span>Xi Xian Cao</span><code>HSX010</code><b>€12.43</b></li>
+                <li><span>Xi Yang Shen</span><code>HSX015</code><b>€69.15</b></li>
+                <li><span>Xia Ku Cao</span><code>HSX020</code><b>€15.12</b></li>
+                <li><span>Xian He Cao</span><code>HSX030</code><b>€12.69</b></li>
+                <li><span>Xian Mao</span><code>HSX040</code><b>€16.78</b></li>
+                <li><span>Xiang Fu (Cu)</span><code>HSX051</code><b>€14.63</b></li>
+                <li><span>Xiao Hui Xiang (Yan Zhi)</span><code>HSX060</code><b>€12.09</b></li>
+                <li><span>Xiao Ji</span><code>HSX065</code><b>€12.92</b></li>
+                <li><span>Xiao Mai (Huai)</span><code>HSX070</code><b>€18.10</b></li>
+                <li><span>Xie Bai</span><code>HSX080</code><b>€15.47</b></li>
+                <li><span>Xin Yi</span><code>HSX090</code><b>€29.99</b></li>
+                <li><span>Xing Ren (Dan Ku)</span><code>HSX100</code><b>€26.69</b></li>
+                <li><span>Xu Chang Qing</span><code>HSX105</code><b>€34.49</b></li>
+                <li><span>Xu Duan</span><code>HSX110</code><b>€13.73</b></li>
+                <li><span>Xu Duan (Yan)</span><code>HSX111</code><b>€15.12</b></li>
+                <li><span>Xuan Fu Hua</span><code>HSX120</code><b>€11.26</b></li>
+                <li><span>Xuan Shen</span><code>HSX130</code><b>€13.18</b></li>
+                <li><span>Xue Jie</span><code>HSX140</code><b>€104.21</b></li>
+                <li><span>Yan Hu Suo (Cu Zhi)</span><code>HSY010</code><b>€33.01</b></li>
+                <li><span>Ye Ju Hua</span><code>HSY020</code><b>€17.90</b></li>
+                <li><span>Yi Mu Cao</span><code>HSY030</code><b>€13.64</b></li>
+                <li><span>Yi Yi Ren</span><code>HSY039</code><b>€13.64</b></li>
+                <li><span>Yi Yi Ren (Fu Chao)</span><code>HSY040</code><b>€14.89</b></li>
+                <li><span>Yi Zhi Ren (Yan Zhi)</span><code>HSY050</code><b>€17.10</b></li>
+                <li><span>Yin Chai Hu</span><code>HSY060</code><b>€25.84</b></li>
+                <li><span>Yin Chen</span><code>HSY070</code><b>€13.18</b></li>
+                <li><span>Yin Yang Huo (Xian Ling PI)</span><code>HSY075</code><b>€15.47</b></li>
+                <li><span>Yu Li Ren</span><code>HSY080</code><b>€22.80</b></li>
+                <li><span>Yu Mi Xu</span><code>HSY085</code><b>€13.77</b></li>
+                <li><span>Yu Jin</span><code>HSY090</code><b>€17.30</b></li>
+                <li><span>Yu Xing Cao</span><code>HSY100</code><b>€13.64</b></li>
+                <li><span>Yu Zhu</span><code>HSY110</code><b>€12.88</b></li>
+                <li><span>Yuan Zhi (Zhi)</span><code>HSY120</code><b>€22.69</b></li>
+                <li><span>Zao Jiao Ci</span><code>HSZ010</code><b>€17.82</b></li>
+                <li><span>Ze Lan</span><code>HSZ020</code><b>€12.61</b></li>
+                <li><span>Ze Xie</span><code>HSZ030</code><b>€15.69</b></li>
+                <li><span>Zhe Bei Mu</span><code>HSZ040</code><b>€45.18</b></li>
+                <li><span>Zhi Mu</span><code>HSZ050</code><b>€15.05</b></li>
+                <li><span>Zhi Qiao / Zhi Ke (Fu Chao)</span><code>HSZ060</code><b>€20.27</b></li>
+                <li><span>Zhi Shi (Fu Chao)</span><code>HSZ070</code><b>€14.33</b></li>
+                <li><span>Zhi Zi</span><code>HSZ080</code><b>€15.80</b></li>
+                <li><span>Zhi Zi (Jiao)</span><code>HSZ081</code><b>€15.80</b></li>
+                <li><span>Zhu Ling</span><code>HSZ090</code><b>€59.41</b></li>
+                <li><span>Zhu Ru (Jiang)</span><code>HSZ099</code><b>€18.30</b></li>
+                <li><span>Zhu Ru</span><code>HSZ100</code><b>€17.43</b></li>
+                <li><span>Zi Cao<small>External</small></span><code>HSZ110</code><b>€32.89</b></li>
+                <li><span>Zi Hua Di Ding</span><code>HSZ120</code><b>€11.60</b></li>
+                <li><span>Zi Su Geng</span><code>HSZ130</code><b>€10.88</b></li>
+                <li><span>Zi Su Ye</span><code>HSZ140</code><b>€12.49</b></li>
+                <li><span>Zi Su Zi (Chao)</span><code>HSZ150</code><b>€11.69</b></li>
+                <li><span>Zi Wan (Mi Zhi)</span><code>HSZ160</code><b>€13.64</b></li>
+              </ul>
+            </div>
+          </div>
+        </details>
+
+        <p class="pl-footnote pl-legal">All prices in euro. Prices include VAT at the current rate and are per listed unit (granules are VAT-exempt). Items not in stock can be ordered. Quote the product code when ordering. Prices may change.</p>
+        <!-- PRICELIST-BODY:END -->
+      </section>
+
+      <section class="info-panel" id="contact">
+        <div class="panel-inner">
+
+          <div class="panel-left">
+            <p class="panel-label">ENQUIRY FORM</p>
+
+            <form
+              name="order-enquiry"
+              method="POST"
+              data-netlify="true"
+              class="enquiry-form"
+            >
+              <input type="hidden" name="form-name" value="order-enquiry">
+
+              <div class="form-row">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+
+              <div class="form-row">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+
+              <div class="form-row">
+                <label for="message">Enquiry</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Please include the product codes and quantities you would like to order."
+                  required
+                ></textarea>
+              </div>
+
+              <p class="form-note">
+                Ordering TCM herbs or acupuncture supplies? We need a copy of your qualification before we can process your order. Please email it to <a href="mailto:info@aillehealth.ie?subject=Qualification">info@aillehealth.ie</a>.
+              </p>
+
+              <button type="submit" class="form-submit">
+                Send Enquiry
+              </button>
+            </form>
+          </div>
+
+          <div class="panel-right">
+            <h2>Contact Details</h2>
+            <p><strong>Email</strong> <a href="mailto:info@aillehealth.ie">info@aillehealth.ie</a></p>
+            <p><strong>Phone</strong> <a href="tel:+353857486575">+353 85 748 6575</a></p>
+            <p><strong>WhatsApp</strong> <a href="https://wa.me/353857486575">+353 85 748 6575</a></p>
+            <p><strong>Location</strong> Gorey, Co. Wexford, Ireland</p>
+            <p>Orders by email are preferred. Practitioners: please email a copy of your qualification with your first order.</p>
+          </div>
+
+        </div>
+      </section>
+
+    <footer class="site-footer">
+      <p>© 2026 Áille Health</p>
+    </footer>
+  </main>
+
+<script>
+  // =========================
+  // MOBILE NAV
+  // =========================
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+  function setMenu(open) {
+    navLinks.classList.toggle("active", open);
+    hamburger.classList.toggle("active", open);
+    hamburger.setAttribute("aria-expanded", String(open));
+  }
+
+  hamburger?.addEventListener("click", () => {
+    setMenu(!navLinks.classList.contains("active"));
+  });
+
+  // Close the mobile menu after choosing a link
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => setMenu(false));
+  });
+
+  // =========================
+  // FADE IN OBSERVER
+  // =========================
+  const elements = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+
+  // =========================
+  // PRICE LIST
+  // =========================
+  const groups = document.querySelectorAll(".pl-group");
+  const search = document.getElementById("plSearch");
+  const emptyNote = document.getElementById("plEmpty");
+
+  // Category cards and #pl-... links open the matching section
+  function openFromHash() {
+    const target = document.getElementById(location.hash.slice(1));
+    if (target?.classList.contains("pl-group")) {
+      target.open = true;
+    }
+  }
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
+
+  search?.addEventListener("input", () => {
+    const query = search.value.trim().toLowerCase();
+    let total = 0;
+
+    groups.forEach(group => {
+      let groupMatches = 0;
+
+      group.querySelectorAll(".pl-block").forEach(block => {
+        const rows = block.querySelectorAll(".pl-list li, .pl-table tbody tr");
+        let blockMatches = 0;
+
+        rows.forEach(row => {
+          const match = !query || row.textContent.toLowerCase().includes(query);
+          row.hidden = !match;
+          if (match) blockMatches++;
+        });
+
+        block.hidden = blockMatches === 0;
+        groupMatches += blockMatches;
+      });
+
+      group.querySelectorAll(".pl-heading, .pl-intro").forEach(el => {
+        el.hidden = Boolean(query);
+      });
+      group.hidden = groupMatches === 0;
+      group.open = Boolean(query) && groupMatches > 0;
+      total += groupMatches;
+    });
+
+    emptyNote.hidden = total > 0;
+  });
+</script>
 </body>
 </html>

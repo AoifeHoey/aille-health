@@ -1,0 +1,5 @@
+# Static site: publish the repository root as-is (no build step).
+# The price list section and PDF are generated locally by "Pricelist Generator/build.mjs".
+[build]
+  publish = "."
+  command = ""
